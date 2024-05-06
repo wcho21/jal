@@ -1,0 +1,3 @@
+# JAL
+
+Java algorithm library.
