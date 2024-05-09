@@ -1,5 +1,5 @@
 ```
-$ java -jar target/benchmarks.jar EuclidBenchmark -f 1 -i 1
+$ java -jar target/benchmarks.jar EuclidBenchmark -f 1 -wi 0 -i 1
 ```
 
 ```
