@@ -1,4 +1,4 @@
-package jal.collections.list;
+package org.jal.collections.list;
 
 import java.util.NoSuchElementException;
 

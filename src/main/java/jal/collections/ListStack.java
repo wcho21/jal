@@ -1,6 +1,6 @@
-package jal.collections;
+package org.jal.collections;
 
-import jal.collections.list.LinkedList;
+import org.jal.collections.list.LinkedList;
 
 public class ListStack<T> implements Stack<T> {
   private LinkedList<T> list;

@@ -1,4 +1,4 @@
-package jal.math;
+package org.jal.math;
 
 public class Euclid {
   static public int getGCD(int m, int n) {

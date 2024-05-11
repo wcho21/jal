@@ -1,7 +1,7 @@
 package benchmark.jal.collections.list;
 
-import jal.collections.list.LinkedList;
 import java.util.concurrent.TimeUnit;
+import org.jal.collections.list.LinkedList;
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.BenchmarkMode;
 import org.openjdk.jmh.annotations.Level;

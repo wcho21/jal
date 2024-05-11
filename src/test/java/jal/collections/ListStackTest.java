@@ -1,7 +1,7 @@
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import java.util.NoSuchElementException;
-import jal.collections.ListStack;
+import org.jal.collections.ListStack;
 import org.junit.jupiter.api.Test;
 
 public class ListStackTest {

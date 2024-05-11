@@ -1,5 +1,5 @@
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import jal.math.Euclid;
+import org.jal.math.Euclid;
 import org.junit.jupiter.api.Test;
 
 public class EuclidTest {

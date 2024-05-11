@@ -1,7 +1,7 @@
 package benchmark.jal.math;
 
-import jal.math.Euclid;
 import java.util.concurrent.TimeUnit;
+import org.jal.math.Euclid;
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.BenchmarkMode;
 import org.openjdk.jmh.annotations.Mode;
