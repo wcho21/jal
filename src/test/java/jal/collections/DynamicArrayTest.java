@@ -11,8 +11,8 @@ public class DynamicArrayTest {
     arr.append(42);
     arr.append(43);
 
-    assertEquals(arr.get(0), 42);
-    assertEquals(arr.get(1), 43);
+    assertEquals(42, arr.get(0));
+    assertEquals(43, arr.get(1));
   }
 
   @Test
@@ -23,7 +23,7 @@ public class DynamicArrayTest {
       arr.append(i);
     }
 
-    assertEquals(arr.get(99), 99);
+    assertEquals(99, arr.get(99));
   }
 
   @Test
@@ -45,8 +45,8 @@ public class DynamicArrayTest {
     arr.append(43);
     arr.set(1, 9);
 
-    assertEquals(arr.get(0), 42);
-    assertEquals(arr.get(1), 9);
+    assertEquals(42, arr.get(0));
+    assertEquals(9, arr.get(1));
   }
 
   @Test
@@ -56,7 +56,7 @@ public class DynamicArrayTest {
     arr.append(42);
     arr.append(43);
 
-    assertEquals(arr.getSize(), 2);
+    assertEquals(2, arr.getSize());
   }
 
   @Test
@@ -67,7 +67,7 @@ public class DynamicArrayTest {
     arr.append(43);
     arr.remove();
 
-    assertEquals(arr.get(0), 42);
+    assertEquals(42, arr.get(0));
     assertThrows(IndexOutOfBoundsException.class, () -> arr.get(1));
   }
 
@@ -82,7 +82,7 @@ public class DynamicArrayTest {
       arr.remove();
     }
 
-    assertEquals(arr.get(0), 0);
+    assertEquals(0, arr.get(0));
     assertThrows(IndexOutOfBoundsException.class, () -> arr.get(1));
   }
 }

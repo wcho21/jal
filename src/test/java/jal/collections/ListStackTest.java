@@ -11,7 +11,7 @@ public class ListStackTest {
     stack.push(42);
     stack.push(43);
 
-    assertEquals(stack.peek(), 43);
+    assertEquals(43, stack.peek());
   }
 
   @Test
@@ -20,7 +20,7 @@ public class ListStackTest {
     stack.push(42);
     stack.push(43);
 
-    assertEquals(stack.pop(), 43);
+    assertEquals(43, stack.pop());
   }
 
   @Test
@@ -36,14 +36,14 @@ public class ListStackTest {
     stack.push(42);
     stack.push(43);
 
-    assertEquals(stack.getSize(), 2);
+    assertEquals(2, stack.getSize());
   }
 
   @Test
   public void testIsEmptyForEmptyStack() {
     ListStack<Integer> stack = new ListStack<>();
 
-    assertEquals(stack.isEmpty(), true);
+    assertEquals(true, stack.isEmpty());
   }
 
   @Test
@@ -51,6 +51,6 @@ public class ListStackTest {
     ListStack<Integer> stack = new ListStack<>();
     stack.push(42);
 
-    assertEquals(stack.isEmpty(), false);
+    assertEquals(false, stack.isEmpty());
   }
 }

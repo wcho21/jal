@@ -18,7 +18,7 @@ public class LinkedListTest {
     list.prepend(42);
     list.prepend(43);
 
-    assertEquals(list.getData(), 43);
+    assertEquals(43, list.getData());
   }
 
   @Test
@@ -35,14 +35,14 @@ public class LinkedListTest {
     list.prepend(43);
     list.remove();
 
-    assertEquals(list.getData(), 42);
+    assertEquals(42, list.getData());
   }
 
   @Test
   public void testGetSizeForEmptyList() {
     LinkedList<Integer> list = new LinkedList<>();
 
-    assertEquals(list.getSize(), 0);
+    assertEquals(0, list.getSize());
   }
 
   @Test
@@ -52,14 +52,14 @@ public class LinkedListTest {
     list.prepend(43);
     list.prepend(44);
 
-    assertEquals(list.getSize(), 3);
+    assertEquals(3, list.getSize());
   }
 
   @Test
   public void testIsEmptyForEmptyList() {
     LinkedList<Integer> list = new LinkedList<>();
 
-    assertEquals(list.isEmpty(), true);
+    assertEquals(true, list.isEmpty());
   }
 
   @Test
@@ -68,6 +68,6 @@ public class LinkedListTest {
     list.prepend(42);
     list.prepend(43);
 
-    assertEquals(list.isEmpty(), false);
+    assertEquals(false, list.isEmpty());
   }
 }

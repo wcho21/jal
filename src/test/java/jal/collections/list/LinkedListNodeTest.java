@@ -7,8 +7,8 @@ public class LinkedListNodeTest {
   public void testInitWithoutArguments() {
     LinkedListNode<Integer> node = new LinkedListNode<>();
 
-    assertEquals(node.data, null);
-    assertEquals(node.next, null);
+    assertEquals(null, node.data);
+    assertEquals(null, node.next);
   }
 
   @Test
@@ -17,7 +17,7 @@ public class LinkedListNodeTest {
     next = new LinkedListNode<>(42, null);
     node = new LinkedListNode<>(43, next);
 
-    assertEquals(node.data, 43);
-    assertEquals(node.next, next);
+    assertEquals(43, node.data);
+    assertEquals(next, node.next);
   }
 }
