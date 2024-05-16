@@ -56,6 +56,16 @@ public class InsertionSortStrategyTest {
     assertArrayEquals(expected, unsorted);
   }
 
+  @Test
+  public void testOddEvenSort() {
+    Integer[] unsorted = { 1, 4, 2, 3 };
+    Integer[] expected = { 1, 3, 4, 2 };
+
+    Sorter.sortArray(unsorted, new InsertionSortStrategy(), Comparator.comparing(v -> v % 2 == 0 ? 1 : 0));
+
+    assertArrayEquals(expected, unsorted);
+  }
+
   class AnimalRecord {
     public String species;
     public String name;
@@ -72,7 +82,7 @@ public class InsertionSortStrategyTest {
   }
 
   @Test
-  public void testAnimalRecordSorting() {
+  public void testAnimalRecordSort() {
     final AnimalRecord[] rec = {
       new AnimalRecord("Dog", "3"),
       new AnimalRecord("Dog", "2"),
