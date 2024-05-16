@@ -1,4 +1,4 @@
-package benchmark.jal.collections.list;
+package org.jal.benchmark;
 
 import java.util.concurrent.TimeUnit;
 import org.jal.collections.list.LinkedList;
