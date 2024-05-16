@@ -4,7 +4,6 @@ import static org.jal.util.Comparators.isEqualTo;
 import static org.jal.util.Comparators.isLessThan;
 import java.util.Comparator;
 
-@Deprecated
 public class BinarySearchArray {
   public static <T> int search(T[] arr, T target, Comparator<T> comparator) {
     int size = arr.length;
