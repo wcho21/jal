@@ -19,7 +19,7 @@ import org.openjdk.jmh.annotations.TearDown;
 public class LinkedListBenchmark {
   LinkedList<Integer> list;
 
-  @Param({"128", "256", "512", "1024", "2048"})
+  @Param({"128", "256", "512", "1024", "2048", "4096", "8192", "16384", "32768", "65536", "131072"})
   int size;
 
   @Benchmark
