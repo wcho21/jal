@@ -57,7 +57,7 @@
           <source>${javac.target}</source>
           <target>${javac.target}</target>
           <compilerArgs>
-            <arg>-Xlint:unchecked</arg>
+            <arg>-Xlint:all</arg>
           </compilerArgs>
         </configuration>
       </plugin>
