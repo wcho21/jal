@@ -2,12 +2,10 @@ package org.jal.search;
 
 public class BinarySearchIntArray {
   public static int search(int[] arr, int target) {
-    int size = arr.length;
-
-    int low = 0;
-    int high = size;
-    while (low < high) {
-      int mid = low + (high - low) / 2;
+    int begin = 0;
+    int end = arr.length;
+    while (begin < end) {
+      int mid = begin + (end - begin) / 2;
       int midVal = arr[mid];
 
       if (midVal == target) {
@@ -15,9 +13,9 @@ public class BinarySearchIntArray {
       }
 
       if (midVal < target) {
-        low = mid+1;
+        begin = mid+1;
       } else {
-        high = mid;
+        end = mid;
       }
     }
 
