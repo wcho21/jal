@@ -18,4 +18,18 @@ public class EuclidTest {
 
     assertEquals(0, gcd);
   }
+
+  @Test
+  public void testNegativeNum1() {
+    int gcd = Euclid.getGCD(1, -1);
+
+    assertEquals(0, gcd);
+  }
+
+  @Test
+  public void testNegativeNum2() {
+    int gcd = Euclid.getGCD(-1, 1);
+
+    assertEquals(0, gcd);
+  }
 }
