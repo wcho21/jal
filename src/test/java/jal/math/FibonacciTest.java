@@ -11,7 +11,7 @@ public class FibonacciTest {
   @Nested
   class WithListStack {
     @ParameterizedTest
-    @CsvSource({"3,2","4,3","5,5","6,8","7,13","8,21"})
+    @CsvSource({"-1,0","0,0","1,1","2,1","3,2","4,3","5,5","6,8","7,13","8,21"})
     public void testFibonacci(int n, int expected) {
       int fib = getWithStack(n, new ListStack<Integer>());
 
@@ -22,7 +22,7 @@ public class FibonacciTest {
   @Nested
   class WithArrayStack {
     @ParameterizedTest
-    @CsvSource({"3,2","4,3","5,5","6,8","7,13","8,21"})
+    @CsvSource({"-1,0","0,0","1,1","2,1","3,2","4,3","5,5","6,8","7,13","8,21"})
     public void testFibonacci(int n, int expected) {
       int fib = getWithStack(n, new ArrayStack<Integer>());
 
