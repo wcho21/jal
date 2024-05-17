@@ -56,6 +56,9 @@
           <compilerVersion>${javac.target}</compilerVersion>
           <source>${javac.target}</source>
           <target>${javac.target}</target>
+          <compilerArgs>
+            <arg>-Xlint:unchecked</arg>
+          </compilerArgs>
         </configuration>
       </plugin>
       <plugin>
@@ -76,14 +79,14 @@
             </consoleOutputReporter>
           <statelessTestsetInfoReporter implementation="org.apache.maven.plugin.surefire.extensions.junit5.JUnit5StatelessTestsetInfoTreeReporter">
             <theme>UNICODE</theme>
-            <printStacktraceOnError>true</printStacktraceOnError>
             <printStacktraceOnFailure>true</printStacktraceOnFailure>
-            <printStdoutOnError>true</printStdoutOnError>
-            <printStdoutOnFailure>true</printStdoutOnFailure>
+            <printStacktraceOnError>true</printStacktraceOnError>
             <printStdoutOnSuccess>true</printStdoutOnSuccess>
-            <printStderrOnError>true</printStderrOnError>
+            <printStderrOnSuccess>false</printStderrOnSuccess>
+            <printStdoutOnFailure>true</printStdoutOnFailure>
             <printStderrOnFailure>true</printStderrOnFailure>
-            <printStderrOnSuccess>true</printStderrOnSuccess>
+            <printStdoutOnError>true</printStdoutOnError>
+            <printStderrOnError>true</printStderrOnError>
           </statelessTestsetInfoReporter>
         </configuration>
       </plugin>
