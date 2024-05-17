@@ -1,6 +1,5 @@
 package org.jal.search;
 
-@Deprecated
 public class BinarySearchIntArray {
   public static int search(int[] arr, int target) {
     int size = arr.length;
