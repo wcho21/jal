@@ -34,7 +34,7 @@ public class ShellSortStrategyBenchmark {
   public Integer[] measureReversed() {
     Integer[] toSort = this.reversed.clone();
 
-    Sorter.sortArray(toSort, new ShellSortStrategy<Integer>());
+    Sorter.sortArray(toSort, new ShellSortStrategy<>());
 
     return toSort;
   }
@@ -42,7 +42,7 @@ public class ShellSortStrategyBenchmark {
   @Benchmark
   @OutputTimeUnit(TimeUnit.NANOSECONDS)
   public Integer[] measureBest() {
-    Integer[] sorted = Sorter.sortArray(this.sorted, new ShellSortStrategy<Integer>());
+    Integer[] sorted = Sorter.sortArray(this.sorted, new ShellSortStrategy<>());
 
     return sorted;
   }

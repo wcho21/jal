@@ -13,7 +13,7 @@ public class ShellSortStrategyTest {
     Integer[] unsorted = { 20, 30, 10, 40 };
     Integer[] expected = { 10, 20, 30, 40 };
 
-    Sorter.sortArray(unsorted, new ShellSortStrategy<Integer>());
+    Sorter.sortArray(unsorted, new ShellSortStrategy<>());
 
     assertArrayEquals(expected, unsorted);
   }
@@ -23,7 +23,7 @@ public class ShellSortStrategyTest {
     Integer[] unsorted = Stream.iterate(999, i -> i-1).limit(1000).toArray(Integer[]::new);
     Integer[] expected = Stream.iterate(0, i -> i+1).limit(1000).toArray(Integer[]::new);
 
-    Sorter.sortArray(unsorted, new ShellSortStrategy<Integer>());
+    Sorter.sortArray(unsorted, new ShellSortStrategy<>());
 
     assertArrayEquals(expected, unsorted);
   }
@@ -33,7 +33,7 @@ public class ShellSortStrategyTest {
     Integer[] unsorted = Stream.iterate(0, i -> i+1).limit(1000).toArray(Integer[]::new);
     Integer[] expected = Stream.iterate(999, i -> i-1).limit(1000).toArray(Integer[]::new);
 
-    Sorter.sortArray(unsorted, new ShellSortStrategy<Integer>(), Comparator.comparing(v -> -v));
+    Sorter.sortArray(unsorted, new ShellSortStrategy<>(), Comparator.comparing(v -> -v));
 
     assertArrayEquals(expected, unsorted);
   }

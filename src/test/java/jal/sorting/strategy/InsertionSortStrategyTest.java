@@ -11,7 +11,7 @@ public class InsertionSortStrategyTest {
     Integer[] unsorted = { 20, 30, 10, 40 };
     Integer[] expected = { 10, 20, 30, 40 };
 
-    Sorter.sortArray(unsorted, new InsertionSortStrategy<Integer>());
+    Sorter.sortArray(unsorted, new InsertionSortStrategy<>());
 
     assertArrayEquals(expected, unsorted);
   }
@@ -21,7 +21,7 @@ public class InsertionSortStrategyTest {
     Integer[] unsorted = Stream.iterate(999, i -> i-1).limit(1000).toArray(Integer[]::new);
     Integer[] expected = Stream.iterate(0, i -> i+1).limit(1000).toArray(Integer[]::new);
 
-    Sorter.sortArray(unsorted, new InsertionSortStrategy<Integer>());
+    Sorter.sortArray(unsorted, new InsertionSortStrategy<>());
 
     assertArrayEquals(expected, unsorted);
   }
@@ -31,7 +31,7 @@ public class InsertionSortStrategyTest {
     Integer[] unsorted = Stream.iterate(0, i -> i+1).limit(1000).toArray(Integer[]::new);
     Integer[] expected = Stream.iterate(999, i -> i-1).limit(1000).toArray(Integer[]::new);
 
-    Sorter.sortArray(unsorted, new InsertionSortStrategy<Integer>(), Comparator.comparing(v -> -v));
+    Sorter.sortArray(unsorted, new InsertionSortStrategy<>(), Comparator.comparing(v -> -v));
 
     assertArrayEquals(expected, unsorted);
   }
@@ -41,7 +41,7 @@ public class InsertionSortStrategyTest {
     Integer[] unsorted = { 110, 93, 84, 43, 26, 9 };
     Integer[] expected = { 9, 26, 43, 84, 93, 110 };
 
-    Sorter.sortArray(unsorted, new InsertionSortStrategy<Integer>(), Comparator.comparing(v -> v % 8));
+    Sorter.sortArray(unsorted, new InsertionSortStrategy<>(), Comparator.comparing(v -> v % 8));
 
     assertArrayEquals(expected, unsorted);
   }
@@ -51,7 +51,7 @@ public class InsertionSortStrategyTest {
     Integer[] unsorted = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
     Integer[] expected = { 0, 8, 1, 9, 2, 10, 3, 4, 5, 6, 7 };
 
-    Sorter.sortArray(unsorted, new InsertionSortStrategy<Integer>(), Comparator.comparing(v -> v % 8));
+    Sorter.sortArray(unsorted, new InsertionSortStrategy<>(), Comparator.comparing(v -> v % 8));
 
     assertArrayEquals(expected, unsorted);
   }
@@ -61,7 +61,7 @@ public class InsertionSortStrategyTest {
     Integer[] unsorted = { 1, 4, 2, 3 };
     Integer[] expected = { 1, 3, 4, 2 };
 
-    Sorter.sortArray(unsorted, new InsertionSortStrategy<Integer>(), Comparator.comparing(v -> v % 2 == 0 ? 1 : 0));
+    Sorter.sortArray(unsorted, new InsertionSortStrategy<>(), Comparator.comparing(v -> v % 2 == 0 ? 1 : 0));
 
     assertArrayEquals(expected, unsorted);
   }
@@ -95,7 +95,7 @@ public class InsertionSortStrategyTest {
     AnimalRecord[] unsorted = { rec[0], rec[5], rec[3], rec[1], rec[4], rec[2] };
     AnimalRecord[] expected = rec;
 
-    Sorter.sortArray(unsorted, new InsertionSortStrategy<AnimalRecord>(), (rec1, rec2) -> {
+    Sorter.sortArray(unsorted, new InsertionSortStrategy<>(), (rec1, rec2) -> {
       int speciesOrder1 = rec1.species.equals("Dog") ? 0 : 1;
       int speciesOrder2 = rec2.species.equals("Dog") ? 0 : 1;
 

@@ -34,7 +34,7 @@ public class InsertionSortStrategyBenchmark {
   public Integer[] measureWorst() {
     Integer[] toSort = this.reversed.clone();
 
-    Sorter.sortArray(toSort, new InsertionSortStrategy<Integer>());
+    Sorter.sortArray(toSort, new InsertionSortStrategy<>());
 
     return toSort;
   }
@@ -42,7 +42,7 @@ public class InsertionSortStrategyBenchmark {
   @Benchmark
   @OutputTimeUnit(TimeUnit.NANOSECONDS)
   public Integer[] measureBest() {
-    Integer[] sorted = Sorter.sortArray(this.sorted, new InsertionSortStrategy<Integer>());
+    Integer[] sorted = Sorter.sortArray(this.sorted, new InsertionSortStrategy<>());
 
     return sorted;
   }
