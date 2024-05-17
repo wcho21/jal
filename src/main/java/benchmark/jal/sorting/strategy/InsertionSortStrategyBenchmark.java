@@ -3,7 +3,7 @@ package org.jal.benchmark;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Stream;
 import org.jal.sorting.Sorter;
-import org.jal.sorting.strategy.InsertionSortStrategy;
+import org.jal.sorting.strategy.InsertionStrategy;
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.BenchmarkMode;
 import org.openjdk.jmh.annotations.Level;
@@ -34,7 +34,7 @@ public class InsertionSortStrategyBenchmark {
   public Integer[] measureWorst() {
     Integer[] toSort = this.reversed.clone();
 
-    Sorter.sortArray(toSort, new InsertionSortStrategy<>());
+    Sorter.sortArray(toSort, new InsertionStrategy<>());
 
     return toSort;
   }
@@ -42,7 +42,7 @@ public class InsertionSortStrategyBenchmark {
   @Benchmark
   @OutputTimeUnit(TimeUnit.NANOSECONDS)
   public Integer[] measureBest() {
-    Integer[] sorted = Sorter.sortArray(this.sorted, new InsertionSortStrategy<>());
+    Integer[] sorted = Sorter.sortArray(this.sorted, new InsertionStrategy<>());
 
     return sorted;
   }

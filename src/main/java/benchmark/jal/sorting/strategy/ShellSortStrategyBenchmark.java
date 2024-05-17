@@ -3,7 +3,7 @@ package org.jal.benchmark;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Stream;
 import org.jal.sorting.Sorter;
-import org.jal.sorting.strategy.ShellSortStrategy;
+import org.jal.sorting.strategy.ShellStrategy;
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.BenchmarkMode;
 import org.openjdk.jmh.annotations.Level;
@@ -34,7 +34,7 @@ public class ShellSortStrategyBenchmark {
   public Integer[] measureReversed() {
     Integer[] toSort = this.reversed.clone();
 
-    Sorter.sortArray(toSort, new ShellSortStrategy<>());
+    Sorter.sortArray(toSort, new ShellStrategy<>());
 
     return toSort;
   }
@@ -42,7 +42,7 @@ public class ShellSortStrategyBenchmark {
   @Benchmark
   @OutputTimeUnit(TimeUnit.NANOSECONDS)
   public Integer[] measureBest() {
-    Integer[] sorted = Sorter.sortArray(this.sorted, new ShellSortStrategy<>());
+    Integer[] sorted = Sorter.sortArray(this.sorted, new ShellStrategy<>());
 
     return sorted;
   }
