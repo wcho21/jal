@@ -16,7 +16,7 @@ import org.openjdk.jmh.annotations.State;
 
 @BenchmarkMode(Mode.AverageTime)
 @State(Scope.Thread)
-public class ShellSortStrategyBenchmark {
+public class ShellStrategyBenchmark {
   Integer[] reversed;
   Integer[] sorted;
 
