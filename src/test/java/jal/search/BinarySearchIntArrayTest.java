@@ -3,12 +3,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
 public class BinarySearchIntArrayTest {
-  static int[] arr = { 10, 20, 30, 40, 50, 60, 70 };
-  static int badValue = 0;
+  static int[] SORTED = { 10, 20, 30, 40, 50, 60, 70 };
+  static int BAD_VALUE = 0;
 
   @Test
   public void testFound() {
-    int[] arr = BinarySearchIntArrayTest.arr;
+    int[] arr = SORTED;
     int valueAt2 = arr[2];
 
     int index = search(arr, valueAt2);
@@ -18,8 +18,8 @@ public class BinarySearchIntArrayTest {
 
   @Test
   public void testNotFound() {
-    int[] arr = BinarySearchIntArrayTest.arr;
-    int badValue = BinarySearchIntArrayTest.badValue;
+    int[] arr = SORTED;
+    int badValue = BAD_VALUE;
 
     int index = search(arr, badValue);
 

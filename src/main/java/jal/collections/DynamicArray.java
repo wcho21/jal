@@ -3,9 +3,9 @@ package org.jal.collections;
 import java.util.Arrays;
 
 public class DynamicArray<T> {
-  final static private int initCapacity = 4;
-  final static private double growthFactor = 2.0;
-  final static private double minLoadFactor = 0.25;
+  final static private int INIT_CAPACITY = 4;
+  final static private double GROWTH_FACTOR = 2.0;
+  final static private double MIN_LOAD_FACTOR = 0.25;
 
   private T[] arr;
   private int size;
@@ -13,16 +13,16 @@ public class DynamicArray<T> {
 
   public DynamicArray() {
     @SuppressWarnings("unchecked")
-    T[] initArr = (T[]) new Object[DynamicArray.initCapacity];
+    T[] initArr = (T[]) new Object[INIT_CAPACITY];
 
     this.arr = initArr;
     this.size = 0;
-    this.capacity = DynamicArray.initCapacity;
+    this.capacity = INIT_CAPACITY;
   }
 
   public void append(T data) {
     if (this.isOutOfCapacity(this.size)) {
-      int newCapacity = (int)(DynamicArray.growthFactor * this.capacity);
+      int newCapacity = (int)(GROWTH_FACTOR * this.capacity);
       this.resizeCapacity(newCapacity);
     }
 
@@ -31,7 +31,7 @@ public class DynamicArray<T> {
 
   public void remove() {
     if (this.isTooFewLoaded()) {
-      int newCapacity = (int)(this.capacity / DynamicArray.growthFactor);
+      int newCapacity = (int)(this.capacity / GROWTH_FACTOR);
       this.resizeCapacity(newCapacity);
     }
 
@@ -61,12 +61,12 @@ public class DynamicArray<T> {
   }
 
   private boolean isTooFewLoaded() {
-    if (this.capacity <= DynamicArray.initCapacity) {
+    if (this.capacity <= INIT_CAPACITY) {
       return false;
     }
 
     double loadFactor = (double)this.size / (double)this.capacity;
-    return loadFactor <= DynamicArray.minLoadFactor;
+    return loadFactor <= MIN_LOAD_FACTOR;
   }
 
   private boolean isOutOfSize(int index) {

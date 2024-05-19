@@ -6,15 +6,14 @@ import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 public class BinarySearchArrayTest {
-  static Integer[] arr = { 9, 26, 43, 84, 93, 110 };
-  static Integer badValue = 0;
-  static Comparator<Integer> rem8ordering = Comparator.comparing(v -> v % 8);
+  static Integer[] SORTED = { 9, 26, 43, 84, 93, 110 };
+  static Comparator<Integer> REM8 = Comparator.comparing(v -> v % 8);
 
   @Nested
   class WithoutComparator {
     @Test
     public void testFound() {
-      Integer[] arr = BinarySearchArrayTest.arr;
+      Integer[] arr = SORTED;
       Integer valueAt2 = arr[2];
 
       int index = search(arr, valueAt2);
@@ -24,8 +23,8 @@ public class BinarySearchArrayTest {
 
     @Test
     public void testNotFound() {
-      Integer[] arr = BinarySearchArrayTest.arr;
-      Integer badValue = BinarySearchArrayTest.badValue;
+      Integer[] arr = SORTED;
+      Integer badValue = 0;
 
       int index = search(arr, badValue);
 
@@ -37,20 +36,20 @@ public class BinarySearchArrayTest {
   class WithRem8Ordering {
     @Test
     public void testFound() {
-      Integer[] arr = BinarySearchArrayTest.arr;
+      Integer[] arr = SORTED;
       Integer valueAt2 = arr[2];
 
-      int index = search(arr, valueAt2, rem8ordering);
+      int index = search(arr, valueAt2, REM8);
 
       assertEquals(2, index);
     }
 
     @Test
     public void testNotFound() {
-      Integer[] arr = BinarySearchArrayTest.arr;
-      Integer badValue = BinarySearchArrayTest.badValue;
+      Integer[] arr = SORTED;
+      Integer badValue = 0;
 
-      int index = search(arr, badValue, rem8ordering);
+      int index = search(arr, badValue, REM8);
 
       assertEquals(-1, index);
     }
