@@ -3,7 +3,7 @@ $ java -jar target/benchmarks.jar DynamicArrayBenchmark -f 1 -wi 0 -i 1
 ```
 
 ```
-Benchmark                                     (size)  Mode  Cnt     Score   Error  Units
+Benchmark                                     (size)  Mode  Cnt       Score   Error  Units
 DynamicArrayBenchmark.measureAppend              128  avgt          309.755          ns/op
 DynamicArrayBenchmark.measureAppend              256  avgt          619.542          ns/op
 DynamicArrayBenchmark.measureAppend              512  avgt         1200.995          ns/op

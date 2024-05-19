@@ -3,7 +3,7 @@ $ java -jar target/benchmarks.jar LinkedListBenchmark -f 1 -wi 0 -i 1
 ```
 
 ```
-Benchmark                                    (size)  Mode  Cnt     Score   Error  Units
+Benchmark                                    (size)  Mode  Cnt       Score   Error  Units
 LinkedListBenchmark.measurePrepend              128  avgt          271.654          ns/op
 LinkedListBenchmark.measurePrepend              256  avgt          549.275          ns/op
 LinkedListBenchmark.measurePrepend              512  avgt         1116.604          ns/op
