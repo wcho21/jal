@@ -32,6 +32,26 @@ public class InsertionStrategyTest {
     assertArrayEquals(expected, unsorted);
   }
 
+  class SomeClass {
+    int value;
+
+    public SomeClass(int value) {
+      this.value = value;
+    }
+  }
+
+  @Test
+  public void testStability() {
+    Integer[] unsorted = { 1, 2, 3, 4, 5, 6 };
+    Integer[] expected = { 2, 4, 6, 1, 3, 5 };
+    SortStrategy<Integer> strat = new InsertionStrategy<>();
+    Comparator<Integer> rem2 = Comparator.comparing(v -> v % 2);
+
+    Sorter.sortArray(unsorted, strat, rem2);
+
+    assertArrayEquals(expected, unsorted);
+  }
+
   @Test
   public void testBadIntervalBegin() {
     Integer[] unsorted = { 20, 30, 10, 40 };
