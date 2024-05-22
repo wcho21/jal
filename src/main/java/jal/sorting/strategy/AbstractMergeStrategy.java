@@ -1,6 +1,6 @@
 package org.jal.sorting.strategy;
 
-import static org.jal.util.sorting.Arrays.isLessOrEqualLowerBegin;
+import static org.jal.sorting.util.Merge.isLessOrEqualLowerBegin;
 import java.util.Comparator;
 
 public abstract class AbstractMergeStrategy<T> implements SortStrategy<T> {

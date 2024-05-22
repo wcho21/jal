@@ -1,27 +1,10 @@
-package org.jal.util.sorting;
+package org.jal.sorting.util;
 
-import static org.jal.util.Comparators.isLessThan;
-import static org.jal.util.Comparators.isLessThanOrEqualTo;
+import static org.jal.sorting.util.Merge.isLessOrEqualLowerBegin;
 import java.util.Comparator;
 
-public class Arrays {
-  public static <T> boolean isLessOrEqualLowerBegin(T[] arr, int lowerBegin, int lowerEnd, int upperBegin, int upperEnd, Comparator<T> comp) {
-    assert lowerEnd >= lowerBegin;
-    assert upperBegin >= lowerEnd;
-    assert upperEnd >= upperBegin;
-    assert upperEnd > lowerBegin;
-
-    if (lowerBegin == lowerEnd) {
-      return false;
-    }
-    if (upperBegin == upperEnd) {
-      return true;
-    }
-
-    return isLessThanOrEqualTo(arr[lowerBegin], arr[upperBegin], comp);
-  }
-
-  public static <T extends Comparable<? super T>> int countInversions(T[] arr) {
+public class Inversion {
+  public static <T extends Comparable<? super T>> int count(T[] arr) {
     T[] aux = arr.clone();
     int end = arr.length;
     int numInv = 0;
@@ -35,14 +18,14 @@ public class Arrays {
 
         int mergeEnd = Math.min(mergeMid + mergeSize, end);
 
-        numInv += mergeAndCountInversions(arr, aux, mergeBegin, mergeMid, mergeEnd);
+        numInv += mergeAndCount(arr, aux, mergeBegin, mergeMid, mergeEnd);
       }
     }
 
     return numInv;
   }
 
-  private static <T extends Comparable<? super T>> int mergeAndCountInversions(T[] arr, T[] aux, int begin, int mid, int end) {
+  private static <T extends Comparable<? super T>> int mergeAndCount(T[] arr, T[] aux, int begin, int mid, int end) {
     int numInv = 0;
     Comparator<T> comp = Comparator.comparing(v -> v);
 
