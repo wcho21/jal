@@ -1,9 +1,9 @@
-package org.jal.sorting.strategy;
+package org.jal.sorting.strategy.arrays;
 
 import static org.jal.sorting.util.Merge.isLessOrEqualLowerBegin;
 import java.util.Comparator;
 
-public abstract class AbstractMergeStrategy<T> implements SortStrategy<T> {
+public abstract class AbstractMergeStrategy<T> implements ArraySortStrategy<T> {
   private T[] aux;
 
   public T[] sortArray(T[] arr, int begin, int end, Comparator<T> comp) {

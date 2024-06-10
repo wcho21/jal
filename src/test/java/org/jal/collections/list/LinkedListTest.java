@@ -1,7 +1,8 @@
+package org.jal.collections.list;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import java.util.NoSuchElementException;
-import org.jal.collections.list.LinkedList;
 import org.junit.jupiter.api.Test;
 
 public class LinkedListTest {

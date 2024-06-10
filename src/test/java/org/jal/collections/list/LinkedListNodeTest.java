@@ -1,5 +1,6 @@
+package org.jal.collections.list;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import org.jal.collections.list.LinkedListNode;
 import org.junit.jupiter.api.Test;
 
 public class LinkedListNodeTest {

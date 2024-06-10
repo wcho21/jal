@@ -1,4 +1,4 @@
-package org.jal.benchmark;
+package benchmark.jal.search;
 
 import static org.jal.search.BinarySearchIntArray.search;
 

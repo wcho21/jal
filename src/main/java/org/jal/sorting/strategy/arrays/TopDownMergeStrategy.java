@@ -1,4 +1,4 @@
-package org.jal.sorting.strategy;
+package org.jal.sorting.strategy.arrays;
 
 import java.util.Comparator;
 

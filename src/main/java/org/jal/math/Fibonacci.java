@@ -3,7 +3,7 @@ package org.jal.math;
 import org.jal.collections.Stack;
 
 public class Fibonacci {
-  public static int getWithStack(int n, Stack<Integer> stack) {
+  public static int get(int n, Stack<Integer> stack) {
     if (n <= 0) {
       return 0;
     }

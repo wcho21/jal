@@ -1,7 +1,8 @@
+package org.jal.search;
+
 import static org.jal.search.BinarySearchArray.search;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.Comparator;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 

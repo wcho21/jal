@@ -1,4 +1,6 @@
-import static org.jal.math.Fibonacci.getWithStack;
+package org.jal.math;
+
+import static org.jal.math.Fibonacci.get;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.jal.collections.ArrayStack;
@@ -13,7 +15,7 @@ public class FibonacciTest {
     @ParameterizedTest
     @CsvSource({"-1,0","0,0","1,1","2,1","3,2","4,3","5,5","6,8","7,13","8,21"})
     public void testFibonacci(int n, int expected) {
-      int fib = getWithStack(n, new ListStack<Integer>());
+      int fib = get(n, new ListStack<Integer>());
 
       assertEquals(expected, fib);
     }
@@ -24,7 +26,7 @@ public class FibonacciTest {
     @ParameterizedTest
     @CsvSource({"-1,0","0,0","1,1","2,1","3,2","4,3","5,5","6,8","7,13","8,21"})
     public void testFibonacci(int n, int expected) {
-      int fib = getWithStack(n, new ArrayStack<Integer>());
+      int fib = get(n, new ArrayStack<Integer>());
 
       assertEquals(expected, fib);
     }

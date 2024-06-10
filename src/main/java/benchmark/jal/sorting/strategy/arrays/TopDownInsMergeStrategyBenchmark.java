@@ -1,9 +1,9 @@
-package org.jal.benchmark;
+package benchmark.jal.sorting.strategy.arrays;
 
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Stream;
-import org.jal.sorting.Sorter;
-import org.jal.sorting.strategy.ShellStrategy;
+import org.jal.sorting.ArraySorter;
+import org.jal.sorting.strategy.arrays.TopDownInsMergeStrategy;
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.BenchmarkMode;
 import org.openjdk.jmh.annotations.Level;
@@ -16,7 +16,7 @@ import org.openjdk.jmh.annotations.State;
 
 @BenchmarkMode(Mode.AverageTime)
 @State(Scope.Thread)
-public class ShellStrategyBenchmark {
+public class TopDownInsMergeStrategyBenchmark {
   Integer[] reversed;
   Integer[] sorted;
 
@@ -34,15 +34,15 @@ public class ShellStrategyBenchmark {
   public Integer[] measureReversed() {
     Integer[] toSort = this.reversed.clone();
 
-    Sorter.sortArray(toSort, new ShellStrategy<>());
+    ArraySorter.sortArray(toSort, new TopDownInsMergeStrategy<>());
 
     return toSort;
   }
 
   @Benchmark
-  @OutputTimeUnit(TimeUnit.NANOSECONDS)
-  public Integer[] measureBest() {
-    Integer[] sorted = Sorter.sortArray(this.sorted, new ShellStrategy<>());
+  @OutputTimeUnit(TimeUnit.MICROSECONDS)
+  public Integer[] measureSorted() {
+    Integer[] sorted = ArraySorter.sortArray(this.sorted, new TopDownInsMergeStrategy<>());
 
     return sorted;
   }

@@ -1,9 +1,9 @@
-package org.jal.benchmark;
+package benchmark.jal.sorting.strategy.arrays;
 
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Stream;
-import org.jal.sorting.Sorter;
-import org.jal.sorting.strategy.TopDownMergeWithInsStrategy;
+import org.jal.sorting.ArraySorter;
+import org.jal.sorting.strategy.arrays.TopDownMergeStrategy;
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.BenchmarkMode;
 import org.openjdk.jmh.annotations.Level;
@@ -16,7 +16,7 @@ import org.openjdk.jmh.annotations.State;
 
 @BenchmarkMode(Mode.AverageTime)
 @State(Scope.Thread)
-public class TopDownMergeWithInsStrategyBenchmark {
+public class TopDownMergeStrategyBenchmark {
   Integer[] reversed;
   Integer[] sorted;
 
@@ -34,7 +34,7 @@ public class TopDownMergeWithInsStrategyBenchmark {
   public Integer[] measureReversed() {
     Integer[] toSort = this.reversed.clone();
 
-    Sorter.sortArray(toSort, new TopDownMergeWithInsStrategy<>());
+    ArraySorter.sortArray(toSort, new TopDownMergeStrategy<>());
 
     return toSort;
   }
@@ -42,7 +42,7 @@ public class TopDownMergeWithInsStrategyBenchmark {
   @Benchmark
   @OutputTimeUnit(TimeUnit.MICROSECONDS)
   public Integer[] measureSorted() {
-    Integer[] sorted = Sorter.sortArray(this.sorted, new TopDownMergeWithInsStrategy<>());
+    Integer[] sorted = ArraySorter.sortArray(this.sorted, new TopDownMergeStrategy<>());
 
     return sorted;
   }

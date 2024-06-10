@@ -1,3 +1,5 @@
+package org.jal.sorting.util;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 import static org.jal.sorting.util.Inversion.count;

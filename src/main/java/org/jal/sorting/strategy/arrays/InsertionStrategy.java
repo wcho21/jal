@@ -1,10 +1,10 @@
-package org.jal.sorting.strategy;
+package org.jal.sorting.strategy.arrays;
 
 import static org.jal.util.Arrays.swap;
 import static org.jal.util.Comparators.isGreaterThan;
 import java.util.Comparator;
 
-public class InsertionStrategy<T> implements SortStrategy<T> {
+public class InsertionStrategy<T> implements ArraySortStrategy<T> {
   public T[] sortArray(T[] arr, int begin, int end, Comparator<T> comp) {
     for (int i = begin+1; i < end; ++i) {
       int j = i-1;

@@ -1,10 +1,9 @@
-package org.jal.sorting.strategy;
+package org.jal.sorting.strategy.arrays;
 
 import java.util.Comparator;
-import org.jal.sorting.Sorter;
-import org.jal.sorting.strategy.InsertionStrategy;
+import org.jal.sorting.ArraySorter;
 
-public class TopDownMergeWithInsStrategy<T> extends AbstractMergeStrategy<T> {
+public class TopDownInsMergeStrategy<T> extends AbstractMergeStrategy<T> {
   private static int THRESHOLD = 7;
 
   @Override
@@ -13,8 +12,9 @@ public class TopDownMergeWithInsStrategy<T> extends AbstractMergeStrategy<T> {
       return;
     }
 
-    if (end - begin <= THRESHOLD) { // small size
-      Sorter.sortArray(arr, begin, end, new InsertionStrategy<>(), comp);
+    // do insertion sort if small
+    if (end - begin <= THRESHOLD) {
+      ArraySorter.sortArray(arr, begin, end, new InsertionStrategy<>(), comp);
       return;
     }
 

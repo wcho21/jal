@@ -1,5 +1,6 @@
+package org.jal.util;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import org.jal.util.Arrays;
 import org.junit.jupiter.api.Test;
 
 public class ArraysTest {

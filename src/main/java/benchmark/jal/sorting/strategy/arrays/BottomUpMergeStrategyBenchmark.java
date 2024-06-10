@@ -1,9 +1,9 @@
-package org.jal.benchmark;
+package benchmark.jal.sorting.strategy.arrays;
 
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Stream;
-import org.jal.sorting.Sorter;
-import org.jal.sorting.strategy.BottomUpMergeStrategy;
+import org.jal.sorting.ArraySorter;
+import org.jal.sorting.strategy.arrays.BottomUpMergeStrategy;
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.BenchmarkMode;
 import org.openjdk.jmh.annotations.Level;
@@ -34,7 +34,7 @@ public class BottomUpMergeStrategyBenchmark {
   public Integer[] measureReversed() {
     Integer[] toSort = this.reversed.clone();
 
-    Sorter.sortArray(toSort, new BottomUpMergeStrategy<>());
+    ArraySorter.sortArray(toSort, new BottomUpMergeStrategy<>());
 
     return toSort;
   }
@@ -42,7 +42,7 @@ public class BottomUpMergeStrategyBenchmark {
   @Benchmark
   @OutputTimeUnit(TimeUnit.MICROSECONDS)
   public Integer[] measureSorted() {
-    Integer[] sorted = Sorter.sortArray(this.sorted, new BottomUpMergeStrategy<>());
+    Integer[] sorted = ArraySorter.sortArray(this.sorted, new BottomUpMergeStrategy<>());
 
     return sorted;
   }
