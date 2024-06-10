@@ -1,15 +1,34 @@
 package org.jal.util.partition;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.function.IntBinaryOperator;
 import java.util.stream.Stream;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
 public class RandTwoWayStrategyTest {
+  @Test
+  public void testSuccess() {
+    Integer[] arr = new Integer[] { 4, 5, 6, 2, 3 };
+    Comparator<Integer> identity = Comparator.comparing(v -> v);
+
+    IntBinaryOperator chooseBegin = (a, b) -> a;
+    PartitionStrategy<Integer> strat = new RandTwoWayStrategy<>(chooseBegin);
+
+    int pivot = strat.partition(arr, 0, arr.length, identity);
+    int pivotVal = arr[pivot];
+
+    assertEquals(4, pivotVal);
+    assertTrue(Arrays.stream(arr, 0, pivot).allMatch(v -> v <= pivotVal));
+    assertTrue(Arrays.stream(arr, pivot+1, arr.length).allMatch(v -> v >= pivotVal));
+  }
+
   static Comparator<Integer> INC = Comparator.comparing(v -> v);
 
   static int ARR_SIZE = 64;
@@ -20,8 +39,8 @@ public class RandTwoWayStrategyTest {
 
   @ParameterizedTest
   @MethodSource("successProvider")
-  public void testSuccess(Integer[] arr, int begin, int end) {
-    RandIntSupplier beginChooser = (a, b) -> a;
+  public void testSuccesses(Integer[] arr, int begin, int end) {
+    IntBinaryOperator beginChooser = (a, b) -> a;
     PartitionStrategy<Integer> strat = new RandTwoWayStrategy<>(beginChooser);
 
     int pivot = strat.partition(arr, begin, end, INC);

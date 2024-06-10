@@ -13,28 +13,25 @@ public class TwoWayStrategy<T> implements PartitionStrategy<T> {
 
     T pivot = arr[begin];
     int l = begin+1;
-    int u = end-1;
+    int u = end;
 
     while (true) {
       while (l < end && isLessThan(arr[l], pivot, comp)) {
         l++;
       }
-      while (u >= begin+1 && isGreaterThan(arr[u], pivot, comp)) {
+      while (isGreaterThan(arr[u-1], pivot, comp)) {
         u--;
       }
 
       if (l < u) {
-        swap(arr, l, u);
+        swap(arr, l, u-1);
         l++;
         u--;
       } else {
-        // move pivot to `u`
-        swap(arr, begin, u);
-        break;
+        // move pivot (at `begin`) to `u-1` and return it
+        swap(arr, begin, u-1);
+        return u-1;
       }
     }
-
-    // return pivot index
-    return u;
   }
 }
