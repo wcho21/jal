@@ -1,0 +1,47 @@
+```
+Benchmark                                                      (size)  Mode  Cnt      Score   Error  Units
+TwoAndThreeWayQuickStrategyBenchmark.measureThreeWayDuplicate     128  avgt           0.094          us/op
+TwoAndThreeWayQuickStrategyBenchmark.measureThreeWayDuplicate     256  avgt           0.168          us/op
+TwoAndThreeWayQuickStrategyBenchmark.measureThreeWayDuplicate     512  avgt           0.305          us/op
+TwoAndThreeWayQuickStrategyBenchmark.measureThreeWayDuplicate    1024  avgt           0.569          us/op
+TwoAndThreeWayQuickStrategyBenchmark.measureThreeWayDuplicate    2048  avgt           1.098          us/op
+TwoAndThreeWayQuickStrategyBenchmark.measureThreeWayDuplicate    4096  avgt           2.197          us/op
+TwoAndThreeWayQuickStrategyBenchmark.measureThreeWayDuplicate    8192  avgt           4.385          us/op
+TwoAndThreeWayQuickStrategyBenchmark.measureThreeWayDuplicate   16384  avgt           8.614          us/op
+TwoAndThreeWayQuickStrategyBenchmark.measureThreeWayDuplicate   32768  avgt          17.263          us/op
+TwoAndThreeWayQuickStrategyBenchmark.measureThreeWayDuplicate   65536  avgt          34.334          us/op
+TwoAndThreeWayQuickStrategyBenchmark.measureThreeWayDuplicate  131072  avgt          68.701          us/op
+TwoAndThreeWayQuickStrategyBenchmark.measureThreeWayReversed      128  avgt           6.667          us/op
+TwoAndThreeWayQuickStrategyBenchmark.measureThreeWayReversed      256  avgt          13.714          us/op
+TwoAndThreeWayQuickStrategyBenchmark.measureThreeWayReversed      512  avgt          29.357          us/op
+TwoAndThreeWayQuickStrategyBenchmark.measureThreeWayReversed     1024  avgt          63.411          us/op
+TwoAndThreeWayQuickStrategyBenchmark.measureThreeWayReversed     2048  avgt         135.585          us/op
+TwoAndThreeWayQuickStrategyBenchmark.measureThreeWayReversed     4096  avgt         279.110          us/op
+TwoAndThreeWayQuickStrategyBenchmark.measureThreeWayReversed     8192  avgt         600.422          us/op
+TwoAndThreeWayQuickStrategyBenchmark.measureThreeWayReversed    16384  avgt        1347.581          us/op
+TwoAndThreeWayQuickStrategyBenchmark.measureThreeWayReversed    32768  avgt        2921.989          us/op
+TwoAndThreeWayQuickStrategyBenchmark.measureThreeWayReversed    65536  avgt        6018.247          us/op
+TwoAndThreeWayQuickStrategyBenchmark.measureThreeWayReversed   131072  avgt       13804.861          us/op
+TwoAndThreeWayQuickStrategyBenchmark.measureTwoWayDuplicate       128  avgt           3.873          us/op
+TwoAndThreeWayQuickStrategyBenchmark.measureTwoWayDuplicate       256  avgt           8.420          us/op
+TwoAndThreeWayQuickStrategyBenchmark.measureTwoWayDuplicate       512  avgt          17.447          us/op
+TwoAndThreeWayQuickStrategyBenchmark.measureTwoWayDuplicate      1024  avgt          38.280          us/op
+TwoAndThreeWayQuickStrategyBenchmark.measureTwoWayDuplicate      2048  avgt          80.661          us/op
+TwoAndThreeWayQuickStrategyBenchmark.measureTwoWayDuplicate      4096  avgt         198.361          us/op
+TwoAndThreeWayQuickStrategyBenchmark.measureTwoWayDuplicate      8192  avgt         404.878          us/op
+TwoAndThreeWayQuickStrategyBenchmark.measureTwoWayDuplicate     16384  avgt         863.930          us/op
+TwoAndThreeWayQuickStrategyBenchmark.measureTwoWayDuplicate     32768  avgt        1865.301          us/op
+TwoAndThreeWayQuickStrategyBenchmark.measureTwoWayDuplicate     65536  avgt        3951.406          us/op
+TwoAndThreeWayQuickStrategyBenchmark.measureTwoWayDuplicate    131072  avgt        9264.954          us/op
+TwoAndThreeWayQuickStrategyBenchmark.measureTwoWayReversed        128  avgt           5.082          us/op
+TwoAndThreeWayQuickStrategyBenchmark.measureTwoWayReversed        256  avgt          10.328          us/op
+TwoAndThreeWayQuickStrategyBenchmark.measureTwoWayReversed        512  avgt          21.448          us/op
+TwoAndThreeWayQuickStrategyBenchmark.measureTwoWayReversed       1024  avgt          35.592          us/op
+TwoAndThreeWayQuickStrategyBenchmark.measureTwoWayReversed       2048  avgt          70.159          us/op
+TwoAndThreeWayQuickStrategyBenchmark.measureTwoWayReversed       4096  avgt         144.601          us/op
+TwoAndThreeWayQuickStrategyBenchmark.measureTwoWayReversed       8192  avgt         306.358          us/op
+TwoAndThreeWayQuickStrategyBenchmark.measureTwoWayReversed      16384  avgt         723.531          us/op
+TwoAndThreeWayQuickStrategyBenchmark.measureTwoWayReversed      32768  avgt        1406.572          us/op
+TwoAndThreeWayQuickStrategyBenchmark.measureTwoWayReversed      65536  avgt        3228.814          us/op
+TwoAndThreeWayQuickStrategyBenchmark.measureTwoWayReversed     131072  avgt        5593.573          us/op
+```
