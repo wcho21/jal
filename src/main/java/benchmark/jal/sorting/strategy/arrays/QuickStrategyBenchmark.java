@@ -1,12 +1,13 @@
 package benchmark.jal.sorting.strategy.arrays;
 
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Stream;
-import java.util.Random;
+
 import org.jal.sorting.ArraySorter;
-import org.jal.util.partition.RandTwoWayStrategy;
 import org.jal.sorting.strategy.arrays.ArraySortStrategy;
 import org.jal.sorting.strategy.arrays.QuickStrategy;
+import org.jal.util.partition.RandTwoWayStrategy;
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.BenchmarkMode;
 import org.openjdk.jmh.annotations.Level;

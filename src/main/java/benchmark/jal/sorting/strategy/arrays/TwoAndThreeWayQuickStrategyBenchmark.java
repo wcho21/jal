@@ -2,9 +2,7 @@ package benchmark.jal.sorting.strategy.arrays;
 
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Stream;
-import org.jal.sorting.ArraySorter;
-import org.jal.sorting.strategy.arrays.ArraySortStrategy;
-import org.jal.sorting.strategy.arrays.QuickStrategy;
+
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.BenchmarkMode;
 import org.openjdk.jmh.annotations.Level;

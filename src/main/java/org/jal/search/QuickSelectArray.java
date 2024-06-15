@@ -1,6 +1,7 @@
 package org.jal.search;
 
 import java.util.Comparator;
+
 import org.jal.util.partition.PartitionStrategy;
 
 public class QuickSelectArray {

@@ -1,6 +1,7 @@
 package org.jal.sorting.strategy.arrays;
 
 import static org.jal.sorting.util.Merge.isLessOrEqualLowerBegin;
+
 import java.util.Comparator;
 
 public abstract class AbstractMergeStrategy<T> implements ArraySortStrategy<T> {

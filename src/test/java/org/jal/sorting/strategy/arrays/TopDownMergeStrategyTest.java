@@ -1,8 +1,10 @@
 package org.jal.sorting.strategy.arrays;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+
 import java.util.Comparator;
 import java.util.stream.Stream;
+
 import org.jal.sorting.ArraySorter;
 import org.junit.jupiter.api.Test;
 

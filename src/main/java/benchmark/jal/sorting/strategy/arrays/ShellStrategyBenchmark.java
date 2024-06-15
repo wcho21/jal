@@ -2,6 +2,7 @@ package benchmark.jal.sorting.strategy.arrays;
 
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Stream;
+
 import org.jal.sorting.ArraySorter;
 import org.jal.sorting.strategy.arrays.ShellStrategy;
 import org.openjdk.jmh.annotations.Benchmark;

@@ -1,6 +1,7 @@
 package org.jal.sorting.strategy.arrays;
 
 import java.util.Comparator;
+
 import org.jal.sorting.ArraySorter;
 
 public class TopDownInsMergeStrategy<T> extends AbstractMergeStrategy<T> {

@@ -1,6 +1,7 @@
 package org.jal.sorting.util;
 
 import static org.jal.util.Comparators.isLessThanOrEqualTo;
+
 import java.util.Comparator;
 
 public class Merge {

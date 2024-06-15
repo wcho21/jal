@@ -1,6 +1,7 @@
 package org.jal.sorting.util;
 
 import static org.jal.sorting.util.Merge.isLessOrEqualLowerBegin;
+
 import java.util.Comparator;
 
 public class Inversion {

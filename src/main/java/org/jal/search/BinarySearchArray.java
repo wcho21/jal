@@ -2,6 +2,7 @@ package org.jal.search;
 
 import static org.jal.util.Comparators.isEqualTo;
 import static org.jal.util.Comparators.isLessThan;
+
 import java.util.Comparator;
 
 public class BinarySearchArray {

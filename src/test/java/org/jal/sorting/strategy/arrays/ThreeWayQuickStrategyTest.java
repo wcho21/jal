@@ -1,12 +1,14 @@
 package org.jal.sorting.strategy.arrays;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+
 import java.util.Random;
 import java.util.function.IntBinaryOperator;
 import java.util.stream.Stream;
+
+import org.jal.sorting.ArraySorter;
 import org.jal.util.partition.RandThreeWayStrategy;
 import org.jal.util.partition.ThreePartitionStrategy;
-import org.jal.sorting.ArraySorter;
 import org.junit.jupiter.api.Test;
 
 public class ThreeWayQuickStrategyTest {

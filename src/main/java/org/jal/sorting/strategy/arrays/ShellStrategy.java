@@ -2,6 +2,7 @@ package org.jal.sorting.strategy.arrays;
 
 import static org.jal.util.Arrays.swap;
 import static org.jal.util.Comparators.isGreaterThan;
+
 import java.util.Comparator;
 
 public class ShellStrategy<T> implements ArraySortStrategy<T> {

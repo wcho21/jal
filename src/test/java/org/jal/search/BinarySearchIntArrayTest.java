@@ -2,6 +2,7 @@ package org.jal.search;
 
 import static org.jal.search.BinarySearchIntArray.search;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import org.junit.jupiter.api.Test;
 
 public class BinarySearchIntArrayTest {

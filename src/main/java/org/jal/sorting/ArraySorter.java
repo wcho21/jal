@@ -1,6 +1,7 @@
 package org.jal.sorting;
 
 import java.util.Comparator;
+
 import org.jal.sorting.strategy.arrays.ArraySortStrategy;
 
 public class ArraySorter {

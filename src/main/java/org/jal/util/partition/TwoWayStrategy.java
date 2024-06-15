@@ -1,8 +1,9 @@
 package org.jal.util.partition;
 
 import static org.jal.util.Arrays.swap;
-import static org.jal.util.Comparators.isLessThan;
 import static org.jal.util.Comparators.isGreaterThan;
+import static org.jal.util.Comparators.isLessThan;
+
 import java.util.Comparator;
 
 public class TwoWayStrategy<T> implements PartitionStrategy<T> {

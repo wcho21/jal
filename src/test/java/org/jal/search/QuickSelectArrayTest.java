@@ -3,10 +3,12 @@ package org.jal.search;
 import static org.jal.search.QuickSelectArray.select;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
-import org.jal.util.partition.PartitionStrategy;
-import org.jal.util.partition.RandTwoWayStrategy;
+
 import java.util.function.IntBinaryOperator;
 import java.util.stream.Stream;
+
+import org.jal.util.partition.PartitionStrategy;
+import org.jal.util.partition.RandTwoWayStrategy;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;

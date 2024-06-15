@@ -1,6 +1,7 @@
 package org.jal.sorting.strategy.arrays;
 
 import java.util.Comparator;
+
 import org.jal.util.partition.PartitionStrategy;
 
 public class QuickStrategy<T> implements ArraySortStrategy<T> {

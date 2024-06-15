@@ -1,6 +1,7 @@
 package org.jal.util.partition;
 
 import static org.jal.util.Arrays.swap;
+
 import java.util.Comparator;
 import java.util.function.IntBinaryOperator;
 

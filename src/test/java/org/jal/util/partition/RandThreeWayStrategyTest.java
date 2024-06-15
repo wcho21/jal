@@ -1,10 +1,12 @@
 package org.jal.util.partition;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.function.IntBinaryOperator;
+
 import org.jal.util.IntPair;
 import org.junit.jupiter.api.Test;
 
