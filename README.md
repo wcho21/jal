@@ -41,3 +41,15 @@
   - 바텀 업 머지 소트: [BottomUpMergeStrategy.java](./src/main/java/org/jal/sorting/strategy/arrays/BottomUpMergeStrategy.java)
 
   - 인버전 카운트: [Inversion.java](./src/main/java/org/jal/sorting/util/Inversion.java)
+
+- [운에 맡기는 파티셔닝](https://drop.rooi.dev/posts/2024/06/15/01)
+
+  - 랜더마이즈드 파티셔닝: [RandTwoWayStrategy.java](./src/main/java/org/jal/util/partition/RandTwoWayStrategy.java)
+
+  - 퀵셀렉트: [QuickSelectArray.java](./src/main/java/org/jal/search/QuickSelectArray.java)
+
+  - 퀵소트: [QuickStrategy.java](./src/main/java/org/jal/sorting/strategy/arrays/QuickStrategy.java)
+
+  - 랜더마이즈드 쓰리웨이 파티셔닝: [RandThreeWayStrategy.java](./src/main/java/org/jal/util/partition/RandThreeWayStrategy.java)
+
+  - 쓰리웨이 퀵소트: [ThreeWayQuickStrategy.java](./src/main/java/org/jal/sorting/strategy/arrays/ThreeWayQuickStrategy.java)
