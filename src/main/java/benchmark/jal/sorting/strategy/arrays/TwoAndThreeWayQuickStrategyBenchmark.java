@@ -1,8 +1,15 @@
 package benchmark.jal.sorting.strategy.arrays;
 
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Stream;
 
+import org.jal.sorting.ArraySorter;
+import org.jal.sorting.strategy.arrays.ArraySortStrategy;
+import org.jal.sorting.strategy.arrays.QuickStrategy;
+import org.jal.sorting.strategy.arrays.ThreeWayQuickStrategy;
+import org.jal.util.partition.RandThreeWayStrategy;
+import org.jal.util.partition.RandTwoWayStrategy;
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.BenchmarkMode;
 import org.openjdk.jmh.annotations.Level;
@@ -20,6 +27,9 @@ public class TwoAndThreeWayQuickStrategyBenchmark {
   Integer[] duplicate;
   Integer[] toSort;
 
+  ArraySortStrategy<Integer> TWO_WAY_STRAT = new QuickStrategy<>(new RandTwoWayStrategy<>(new Random()::nextInt));
+  ArraySortStrategy<Integer> THREE_WAY_STRAT = new ThreeWayQuickStrategy<>(new RandThreeWayStrategy<>(new Random()::nextInt));
+
   @Param({"128", "256", "512", "1024", "2048", "4096", "8192", "16384", "32768", "65536", "131072"})
   int size;
 
@@ -35,18 +45,17 @@ public class TwoAndThreeWayQuickStrategyBenchmark {
   public Integer[] measureTwoWayReversed() {
     System.arraycopy(this.reversed, 0, this.toSort, 0, this.size);
 
-    //ArraySorter.sortArray(this.toSort, new QuickStrategy2<>());
+    ArraySorter.sortArray(this.toSort, TWO_WAY_STRAT);
 
     return this.toSort;
   }
 
   @Benchmark
-  @OutputTimeUnit(TimeUnit.MICROSECONDS)
+  @OutputTimeUnit(TimeUnit.NANOSECONDS)
   public Integer[] measureTwoWayDuplicate() {
-    //Integer[] sorted = ArraySorter.sortArray(this.duplicate, new QuickStrategy2<>());
+    Integer[] sorted = ArraySorter.sortArray(this.duplicate, TWO_WAY_STRAT);
 
-    //return sorted;
-    return new Integer[0];
+    return sorted;
   }
 
   @Benchmark
@@ -54,17 +63,16 @@ public class TwoAndThreeWayQuickStrategyBenchmark {
   public Integer[] measureThreeWayReversed() {
     System.arraycopy(this.reversed, 0, this.toSort, 0, this.size);
 
-    //ArraySorter.sortArray(this.toSort, new ThreeWayQuickStrategy<>());
+    ArraySorter.sortArray(this.toSort, THREE_WAY_STRAT);
 
     return this.toSort;
   }
 
   @Benchmark
-  @OutputTimeUnit(TimeUnit.MICROSECONDS)
+  @OutputTimeUnit(TimeUnit.NANOSECONDS)
   public Integer[] measureThreeWayDuplicate() {
-    //Integer[] sorted = ArraySorter.sortArray(this.duplicate, new ThreeWayQuickStrategy2<>());
+    Integer[] sorted = ArraySorter.sortArray(this.duplicate, THREE_WAY_STRAT);
 
-    //return sorted;
-    return new Integer[0];
+    return sorted;
   }
 }
