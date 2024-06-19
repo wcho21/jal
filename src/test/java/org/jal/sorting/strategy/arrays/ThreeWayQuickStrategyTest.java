@@ -7,8 +7,8 @@ import java.util.function.IntBinaryOperator;
 import java.util.stream.Stream;
 
 import org.jal.sorting.ArraySorter;
-import org.jal.util.partition.RandThreeWayStrategy;
-import org.jal.util.partition.ThreePartitionStrategy;
+import org.jal.partition.RandThreeWayStrategy;
+import org.jal.partition.ThreePartitionStrategy;
 import org.junit.jupiter.api.Test;
 
 public class ThreeWayQuickStrategyTest {

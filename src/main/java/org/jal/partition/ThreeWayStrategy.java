@@ -1,4 +1,4 @@
-package org.jal.util.partition;
+package org.jal.partition;
 
 import static org.jal.util.Arrays.swap;
 import static org.jal.util.Comparators.isGreaterThan;

@@ -1,4 +1,4 @@
-package org.jal.collections;
+package org.jal.collections.stack;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -7,10 +7,10 @@ import java.util.NoSuchElementException;
 
 import org.junit.jupiter.api.Test;
 
-public class ListStackTest {
+public class ArrayStackTest {
   @Test
   public void testPushAndPeek() {
-    ListStack<Integer> stack = new ListStack<>();
+    ArrayStack<Integer> stack = new ArrayStack<>();
     stack.push(42);
     stack.push(43);
 
@@ -19,7 +19,7 @@ public class ListStackTest {
 
   @Test
   public void testPushAndPop() {
-    ListStack<Integer> stack = new ListStack<>();
+    ArrayStack<Integer> stack = new ArrayStack<>();
     stack.push(42);
     stack.push(43);
 
@@ -28,14 +28,14 @@ public class ListStackTest {
 
   @Test
   public void testPopForEmptyStack() {
-    ListStack<Integer> stack = new ListStack<>();
+    ArrayStack<Integer> stack = new ArrayStack<>();
 
     assertThrows(NoSuchElementException.class, () -> stack.pop());
   }
 
   @Test
   public void testGetSize() {
-    ListStack<Integer> stack = new ListStack<>();
+    ArrayStack<Integer> stack = new ArrayStack<>();
     stack.push(42);
     stack.push(43);
 
@@ -44,14 +44,14 @@ public class ListStackTest {
 
   @Test
   public void testIsEmptyForEmptyStack() {
-    ListStack<Integer> stack = new ListStack<>();
+    ArrayStack<Integer> stack = new ArrayStack<>();
 
     assertEquals(true, stack.isEmpty());
   }
 
   @Test
   public void testIsEmptyForNonemptyStack() {
-    ListStack<Integer> stack = new ListStack<>();
+    ArrayStack<Integer> stack = new ArrayStack<>();
     stack.push(42);
 
     assertEquals(false, stack.isEmpty());

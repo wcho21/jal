@@ -1,4 +1,4 @@
-package org.jal.collections;
+package org.jal.collections.array;
 
 import java.util.Arrays;
 

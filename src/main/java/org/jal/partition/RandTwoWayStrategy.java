@@ -1,26 +1,24 @@
-package org.jal.util.partition;
+package org.jal.partition;
 
 import static org.jal.util.Arrays.swap;
 
 import java.util.Comparator;
 import java.util.function.IntBinaryOperator;
 
-import org.jal.util.IntPair;
-
-public class RandThreeWayStrategy<T> implements ThreePartitionStrategy<T> {
+public class RandTwoWayStrategy<T> implements PartitionStrategy<T> {
   IntBinaryOperator rand;
 
-  public RandThreeWayStrategy(IntBinaryOperator rand) {
+  public RandTwoWayStrategy(IntBinaryOperator rand) {
     this.rand = rand;
   }
 
-  public IntPair partition(T[] arr, int begin, int end, Comparator<T> comp) {
+  public int partition(T[] arr, int begin, int end, Comparator<T> comp) {
     // select a random number
     int pivotIndex = this.rand.applyAsInt(begin, end);
 
     swap(arr, begin, pivotIndex);
 
-    ThreePartitionStrategy<T> strat = new ThreeWayStrategy<>();
+    PartitionStrategy<T> strat = new TwoWayStrategy<>();
     return strat.partition(arr, begin, end, comp);
   }
 }

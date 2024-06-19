@@ -1,4 +1,4 @@
-package org.jal.util.partition;
+package org.jal.partition;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;

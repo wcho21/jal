@@ -1,4 +1,4 @@
-package org.jal.collections;
+package org.jal.collections.stack;
 
 import org.jal.collections.list.LinkedList;
 

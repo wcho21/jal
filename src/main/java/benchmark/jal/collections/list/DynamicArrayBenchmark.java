@@ -2,7 +2,7 @@ package benchmark.jal.collections.list;
 
 import java.util.concurrent.TimeUnit;
 
-import org.jal.collections.DynamicArray;
+import org.jal.collections.array.DynamicArray;
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.BenchmarkMode;
 import org.openjdk.jmh.annotations.Mode;

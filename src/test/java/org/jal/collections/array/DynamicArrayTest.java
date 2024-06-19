@@ -1,4 +1,4 @@
-package org.jal.collections;
+package org.jal.collections.array;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;

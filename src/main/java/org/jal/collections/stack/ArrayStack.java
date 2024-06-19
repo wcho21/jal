@@ -1,6 +1,8 @@
-package org.jal.collections;
+package org.jal.collections.stack;
 
 import java.util.NoSuchElementException;
+
+import org.jal.collections.array.DynamicArray;
 
 public class ArrayStack<T> implements Stack<T> {
   private DynamicArray<T> arr;

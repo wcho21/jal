@@ -2,7 +2,7 @@ package org.jal.search;
 
 import java.util.Comparator;
 
-import org.jal.util.partition.PartitionStrategy;
+import org.jal.partition.PartitionStrategy;
 
 public class QuickSelectArray {
   public static <T> T select(T[] arr, int target, PartitionStrategy<T> strat, Comparator<T> comp) {

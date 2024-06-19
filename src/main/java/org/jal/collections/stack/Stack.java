@@ -1,4 +1,4 @@
-package org.jal.collections;
+package org.jal.collections.stack;
 
 public interface Stack<T> {
   public void push(T data);

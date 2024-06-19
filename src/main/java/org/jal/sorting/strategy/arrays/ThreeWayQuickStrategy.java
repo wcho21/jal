@@ -2,8 +2,8 @@ package org.jal.sorting.strategy.arrays;
 
 import java.util.Comparator;
 
+import org.jal.partition.ThreePartitionStrategy;
 import org.jal.util.IntPair;
-import org.jal.util.partition.ThreePartitionStrategy;
 
 public class ThreeWayQuickStrategy<T> implements ArraySortStrategy<T> {
   private ThreePartitionStrategy<T> strat;

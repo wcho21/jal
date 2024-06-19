@@ -9,8 +9,8 @@ import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-import org.jal.util.partition.PartitionStrategy;
-import org.jal.util.partition.RandTwoWayStrategy;
+import org.jal.partition.PartitionStrategy;
+import org.jal.partition.RandTwoWayStrategy;
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.BenchmarkMode;
 import org.openjdk.jmh.annotations.Level;
