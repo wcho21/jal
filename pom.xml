@@ -81,7 +81,7 @@
             <theme>UNICODE</theme>
             <printStacktraceOnFailure>true</printStacktraceOnFailure>
             <printStacktraceOnError>true</printStacktraceOnError>
-            <printStdoutOnSuccess>true</printStdoutOnSuccess>
+            <printStdoutOnSuccess>false</printStdoutOnSuccess>
             <printStderrOnSuccess>false</printStderrOnSuccess>
             <printStdoutOnFailure>true</printStdoutOnFailure>
             <printStderrOnFailure>true</printStderrOnFailure>
