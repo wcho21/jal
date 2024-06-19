@@ -1,11 +1,41 @@
-package org.jal.collections;
+package org.jal.collections.array;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import java.util.stream.Stream;
 
 import org.junit.jupiter.api.Test;
 
 public class DynamicArrayTest {
+  @Test
+  public void testInitWithEmptyArgs() {
+    DynamicArray<Integer> initWithEmptyArgs = new DynamicArray<>();
+
+    assertEquals(0, initWithEmptyArgs.getSize());
+  }
+
+  @Test
+  public void testInitWithSize() {
+    int size = 4;
+    DynamicArray<Integer> initWithSize = new DynamicArray<>(size);
+
+    assertEquals(size, initWithSize.getSize());
+  }
+
+  @Test
+  public void testInitWithArray() {
+    Integer[] arr = new Integer[] { 1, 3, 2, 5, 4 };
+    int begin = 1;
+    int end = 4;
+    DynamicArray<Integer> initWithArray = new DynamicArray<>(arr, begin, end);
+
+    assertEquals(end-begin, initWithArray.getSize());
+    Stream<Integer> indices = Stream.iterate(0, i -> i+1).limit(end-begin);
+    assertTrue(indices.allMatch(i -> initWithArray.get(i) == arr[begin+i]));
+  }
+
   @Test
   public void testAppend() {
     DynamicArray<Integer> arr = new DynamicArray<>();

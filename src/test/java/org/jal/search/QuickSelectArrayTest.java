@@ -7,8 +7,8 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 import java.util.function.IntBinaryOperator;
 import java.util.stream.Stream;
 
-import org.jal.util.partition.PartitionStrategy;
-import org.jal.util.partition.RandTwoWayStrategy;
+import org.jal.partition.PartitionStrategy;
+import org.jal.partition.RandTwoWayStrategy;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;

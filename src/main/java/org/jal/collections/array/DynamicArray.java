@@ -1,4 +1,4 @@
-package org.jal.collections;
+package org.jal.collections.array;
 
 import java.util.Arrays;
 
@@ -18,6 +18,28 @@ public class DynamicArray<T> {
     this.arr = initArr;
     this.size = 0;
     this.capacity = INIT_CAPACITY;
+  }
+
+  public DynamicArray(int size) {
+    int capacity = INIT_CAPACITY;
+    while (capacity < size) {
+      capacity *= 2;
+    }
+
+    @SuppressWarnings("unchecked")
+    T[] initArr = (T[]) new Object[capacity];
+
+    this.arr = initArr;
+    this.size = size;
+    this.capacity = capacity;
+  }
+
+  public DynamicArray(T[] arr, int begin, int end) {
+    this(end - begin);
+
+    for (int i = 0; i < end - begin; i++) {
+      this.set(i, arr[begin+i]);
+    }
   }
 
   public void append(T data) {

@@ -7,7 +7,7 @@ import java.util.stream.Stream;
 import org.jal.sorting.ArraySorter;
 import org.jal.sorting.strategy.arrays.ArraySortStrategy;
 import org.jal.sorting.strategy.arrays.QuickStrategy;
-import org.jal.util.partition.RandTwoWayStrategy;
+import org.jal.partition.RandTwoWayStrategy;
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.BenchmarkMode;
 import org.openjdk.jmh.annotations.Level;

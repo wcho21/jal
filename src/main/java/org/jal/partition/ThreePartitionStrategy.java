@@ -1,4 +1,4 @@
-package org.jal.util.partition;
+package org.jal.partition;
 
 import java.util.Comparator;
 

@@ -3,8 +3,8 @@ package org.jal.math;
 import static org.jal.math.Fibonacci.get;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.jal.collections.ArrayStack;
-import org.jal.collections.ListStack;
+import org.jal.collections.stack.ArrayStack;
+import org.jal.collections.stack.ListStack;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;

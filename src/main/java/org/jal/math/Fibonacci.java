@@ -1,6 +1,6 @@
 package org.jal.math;
 
-import org.jal.collections.Stack;
+import org.jal.collections.stack.Stack;
 
 public class Fibonacci {
   public static int get(int n, Stack<Integer> stack) {

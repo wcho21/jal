@@ -1,8 +1,9 @@
 package org.jal.collections.list;
 
 import java.util.NoSuchElementException;
+import java.util.Iterator;
 
-public class LinkedList<T> {
+public class LinkedList<T> implements Iterable<T> {
   private LinkedListNode<T> head;
   private int size;
 
@@ -38,6 +39,30 @@ public class LinkedList<T> {
 
   public boolean isEmpty() {
     return this.size == 0;
+  }
+
+  private class ListIterator<U> implements Iterator<U> {
+    private LinkedListNode<U> current;
+
+    public ListIterator(LinkedListNode<U> head) {
+      this.current = head;
+    }
+
+    public boolean hasNext() {
+      return this.current.next != null;
+    }
+
+    public U next() {
+      U data = this.current.data;
+
+      this.current = this.current.next;
+
+      return data;
+    }
+  }
+
+  public Iterator<T> iterator() {
+    return new ListIterator<T>(this.head);
   }
 
   private void throwIfEmpty() {
