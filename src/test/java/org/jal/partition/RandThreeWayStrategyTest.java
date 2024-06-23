@@ -8,9 +8,11 @@ import java.util.Comparator;
 import java.util.function.IntBinaryOperator;
 
 import org.jal.util.IntPair;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class RandThreeWayStrategyTest {
+  @DisplayName("partition() should partition an array")
   @Test
   public void testSuccess() {
     Integer[] arr = new Integer[] { 2, 0, 1, 2, 2, 3, 4 };

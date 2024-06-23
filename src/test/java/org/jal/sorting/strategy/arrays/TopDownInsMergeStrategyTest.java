@@ -6,9 +6,11 @@ import java.util.Comparator;
 import java.util.stream.Stream;
 
 import org.jal.sorting.ArraySorter;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class TopDownInsMergeStrategyTest {
+  @DisplayName("sortArray() should sort an array")
   @Test
   public void testSort() {
     Integer[] unsorted = { 2, 3, 1, 6, 4, 5 };
@@ -20,6 +22,7 @@ public class TopDownInsMergeStrategyTest {
     assertArrayEquals(expected, unsorted);
   }
 
+  @DisplayName("sortArray() should be stable")
   @Test
   public void testStability() {
     Integer[] unsorted = { 1, 2, 3, 4, 5, 6 };
@@ -32,6 +35,7 @@ public class TopDownInsMergeStrategyTest {
     assertArrayEquals(expected, unsorted);
   }
 
+  @DisplayName("sortArray() should sort an array for an interval")
   @Test
   public void testSortInterval() {
     Integer[] unsorted = { -1, -2, 20, 30, 10, 40, -3, -4 };
@@ -45,6 +49,7 @@ public class TopDownInsMergeStrategyTest {
     assertArrayEquals(expected, unsorted);
   }
 
+  @DisplayName("sortArray() should sort a large array")
   @Test
   public void testSortLarge() {
     Integer[] unsorted = Stream.iterate(999, i -> i-1).limit(1000).toArray(Integer[]::new);

@@ -3,12 +3,14 @@ package org.jal.search;
 import static org.jal.search.BinarySearchIntArray.search;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class BinarySearchIntArrayTest {
   static int[] SORTED = { 10, 20, 30, 40, 50, 60, 70 };
   static int BAD_VALUE = 0;
 
+  @DisplayName("search() should find data if there is")
   @Test
   public void testFound() {
     int[] arr = SORTED;
@@ -19,6 +21,7 @@ public class BinarySearchIntArrayTest {
     assertEquals(2, index);
   }
 
+  @DisplayName("search() should get -1 if there is not")
   @Test
   public void testNotFound() {
     int[] arr = SORTED;

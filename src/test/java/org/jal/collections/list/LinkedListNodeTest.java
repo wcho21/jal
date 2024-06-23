@@ -2,9 +2,11 @@ package org.jal.collections.list;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class LinkedListNodeTest {
+  @DisplayName("should initialize without arguments")
   @Test
   public void testInitWithoutArguments() {
     LinkedListNode<Integer> node = new LinkedListNode<>();
@@ -13,6 +15,7 @@ public class LinkedListNodeTest {
     assertEquals(null, node.next);
   }
 
+  @DisplayName("should initialize with arguments")
   @Test
   public void testInitWithArguments() {
     LinkedListNode<Integer> next, node;

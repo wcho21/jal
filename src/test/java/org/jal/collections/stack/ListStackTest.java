@@ -5,9 +5,11 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.util.NoSuchElementException;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class ListStackTest {
+  @DisplayName("peek() should be top")
   @Test
   public void testPushAndPeek() {
     ListStack<Integer> stack = new ListStack<>();
@@ -17,6 +19,7 @@ public class ListStackTest {
     assertEquals(43, stack.peek());
   }
 
+  @DisplayName("pop() should be top")
   @Test
   public void testPushAndPop() {
     ListStack<Integer> stack = new ListStack<>();
@@ -26,6 +29,7 @@ public class ListStackTest {
     assertEquals(43, stack.pop());
   }
 
+  @DisplayName("pop() should throw if empty")
   @Test
   public void testPopForEmptyStack() {
     ListStack<Integer> stack = new ListStack<>();
@@ -33,6 +37,7 @@ public class ListStackTest {
     assertThrows(NoSuchElementException.class, () -> stack.pop());
   }
 
+  @DisplayName("getSize() should get the size")
   @Test
   public void testGetSize() {
     ListStack<Integer> stack = new ListStack<>();
@@ -42,6 +47,7 @@ public class ListStackTest {
     assertEquals(2, stack.getSize());
   }
 
+  @DisplayName("isEmpty() should be true if empty")
   @Test
   public void testIsEmptyForEmptyStack() {
     ListStack<Integer> stack = new ListStack<>();
@@ -49,6 +55,7 @@ public class ListStackTest {
     assertEquals(true, stack.isEmpty());
   }
 
+  @DisplayName("isEmpty() should be false if nonempty")
   @Test
   public void testIsEmptyForNonemptyStack() {
     ListStack<Integer> stack = new ListStack<>();

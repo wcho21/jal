@@ -6,14 +6,16 @@ import java.util.Random;
 import java.util.function.IntBinaryOperator;
 import java.util.stream.Stream;
 
-import org.jal.sorting.ArraySorter;
 import org.jal.partition.PartitionStrategy;
 import org.jal.partition.RandTwoWayStrategy;
+import org.jal.sorting.ArraySorter;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class QuickStrategyTest {
   PartitionStrategy<Integer> STRAT = new RandTwoWayStrategy<>(new Random()::nextInt);
 
+  @DisplayName("sortArray() should sort an array")
   @Test
   public void testSort() {
     Integer[] unsorted = { 20, 30, 10, 40 };
@@ -28,6 +30,7 @@ public class QuickStrategyTest {
     assertArrayEquals(expected, unsorted);
   }
 
+  @DisplayName("sortArray() should sort an array for an interval")
   @Test
   public void testSortInterval() {
     Integer[] unsorted = { -1, -2, 20, 30, 10, 40, -3, -4 };
@@ -41,6 +44,7 @@ public class QuickStrategyTest {
     assertArrayEquals(expected, unsorted);
   }
 
+  @DisplayName("sortArray() should sort a large array")
   @Test
   public void testSortLarge() {
     Integer[] unsorted = Stream.iterate(999, i -> i-1).limit(1000).toArray(Integer[]::new);

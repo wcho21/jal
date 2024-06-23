@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.Comparator;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
@@ -12,8 +13,10 @@ public class BinarySearchArrayTest {
   static Integer[] SORTED = { 9, 26, 43, 84, 93, 110 };
   static Comparator<Integer> REM8 = Comparator.comparing(v -> v % 8);
 
+  @DisplayName("without a comparator")
   @Nested
   class WithoutComparator {
+    @DisplayName("search() should find data if there is")
     @Test
     public void testFound() {
       Integer[] arr = SORTED;
@@ -24,6 +27,7 @@ public class BinarySearchArrayTest {
       assertEquals(2, index);
     }
 
+    @DisplayName("search() should get -1 if there is not")
     @Test
     public void testNotFound() {
       Integer[] arr = SORTED;
@@ -35,8 +39,10 @@ public class BinarySearchArrayTest {
     }
   }
 
+  @DisplayName("with a custom comparator")
   @Nested
   class WithRem8Ordering {
+    @DisplayName("search() should find data if there is")
     @Test
     public void testFound() {
       Integer[] arr = SORTED;
@@ -47,6 +53,7 @@ public class BinarySearchArrayTest {
       assertEquals(2, index);
     }
 
+    @DisplayName("search() should get -1 if there is not")
     @Test
     public void testNotFound() {
       Integer[] arr = SORTED;

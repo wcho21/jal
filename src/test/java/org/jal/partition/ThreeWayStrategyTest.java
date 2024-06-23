@@ -1,6 +1,7 @@
 package org.jal.partition;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Named.named;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 import java.util.Arrays;
@@ -8,6 +9,7 @@ import java.util.Comparator;
 import java.util.stream.Stream;
 
 import org.jal.util.IntPair;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -19,7 +21,8 @@ public class ThreeWayStrategyTest {
   static Integer[] DUPLICATE_ARR = new Integer[] { 1, 1, 1, 1, 1, 1, 1 };
   static Integer[] THREE_KINDS_ARR = new Integer[] { 1, 0, 0, 1, 1, 2, 2 };
 
-  @ParameterizedTest
+  @DisplayName("paritition() should partition")
+  @ParameterizedTest(name = "{0}")
   @MethodSource("successProvider")
   public void testSuccess(Integer[] arr, int begin, int end) {
 
@@ -37,8 +40,8 @@ public class ThreeWayStrategyTest {
 
   static Stream<Arguments> successProvider() {
     return Stream.of(
-      arguments(DUPLICATE_ARR, 0, DUPLICATE_ARR.length),
-      arguments(THREE_KINDS_ARR, 0, THREE_KINDS_ARR.length)
+      arguments(named("a duplicates array", DUPLICATE_ARR), 0, DUPLICATE_ARR.length),
+      arguments(named("a three-value array", THREE_KINDS_ARR), 0, THREE_KINDS_ARR.length)
     );
   }
 }

@@ -7,11 +7,13 @@ import java.util.Comparator;
 import java.util.stream.Stream;
 
 import org.jal.sorting.ArraySorter;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class ShellStrategyTest {
   static Comparator<Integer> rem8ordering = Comparator.comparing(v -> v % 8);
 
+  @DisplayName("sortArray() should sort an array")
   @Test
   public void testSort() {
     Integer[] unsorted = { 20, 30, 10, 40 };
@@ -23,6 +25,7 @@ public class ShellStrategyTest {
     assertArrayEquals(expected, unsorted);
   }
 
+  @DisplayName("sortArray() should sort an array for an interval")
   @Test
   public void testSortInterval() {
     Integer[] unsorted = { 20, 30, 10, 40 };
@@ -36,6 +39,7 @@ public class ShellStrategyTest {
     assertArrayEquals(expected, unsorted);
   }
 
+  @DisplayName("sortArray() should throw for a bad interval begin")
   @Test
   public void testBadIntervalBegin() {
     Integer[] unsorted = { 20, 30, 10, 40 };
@@ -46,6 +50,7 @@ public class ShellStrategyTest {
     assertThrows(ArrayIndexOutOfBoundsException.class, () -> ArraySorter.sortArray(unsorted, begin, end, strat));
   }
 
+  @DisplayName("sortArray() should throw for a bad interval end")
   @Test
   public void testBadIntervalEnd() {
     Integer[] unsorted = { 20, 30, 10, 40 };
@@ -56,6 +61,7 @@ public class ShellStrategyTest {
     assertThrows(ArrayIndexOutOfBoundsException.class, () -> ArraySorter.sortArray(unsorted, begin, end, strat));
   }
 
+  @DisplayName("sortArray() should sort a large array")
   @Test
   public void testSortLarge() {
     Integer[] unsorted = Stream.iterate(999, i -> i-1).limit(1000).toArray(Integer[]::new);
@@ -67,6 +73,7 @@ public class ShellStrategyTest {
     assertArrayEquals(expected, unsorted);
   }
 
+  @DisplayName("sortArray() should sort a large array with a comparator")
   @Test
   public void testReversedSortLarge() {
     Integer[] unsorted = Stream.iterate(0, i -> i+1).limit(1000).toArray(Integer[]::new);

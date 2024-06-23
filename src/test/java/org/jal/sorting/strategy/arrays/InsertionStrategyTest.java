@@ -7,9 +7,11 @@ import java.util.Comparator;
 import java.util.stream.Stream;
 
 import org.jal.sorting.ArraySorter;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class InsertionStrategyTest {
+  @DisplayName("sortArray() should sort an array")
   @Test
   public void testSort() {
     Integer[] unsorted = { 20, 30, 10, 40 };
@@ -21,6 +23,7 @@ public class InsertionStrategyTest {
     assertArrayEquals(expected, unsorted);
   }
 
+  @DisplayName("sortArray() should sort an array for an interval")
   @Test
   public void testSortInterval() {
     Integer[] unsorted = { 20, 30, 10, 40 };
@@ -42,6 +45,7 @@ public class InsertionStrategyTest {
     }
   }
 
+  @DisplayName("sortArray() should be stable")
   @Test
   public void testStability() {
     Integer[] unsorted = { 1, 2, 3, 4, 5, 6 };
@@ -54,6 +58,7 @@ public class InsertionStrategyTest {
     assertArrayEquals(expected, unsorted);
   }
 
+  @DisplayName("sortArray() should throw for a bad interval begin")
   @Test
   public void testBadIntervalBegin() {
     Integer[] unsorted = { 20, 30, 10, 40 };
@@ -64,6 +69,7 @@ public class InsertionStrategyTest {
     assertThrows(ArrayIndexOutOfBoundsException.class, () -> ArraySorter.sortArray(unsorted, begin, end, strat));
   }
 
+  @DisplayName("sortArray() should throw for a bad interval end")
   @Test
   public void testBadIntervalEnd() {
     Integer[] unsorted = { 20, 30, 10, 40 };
@@ -74,6 +80,7 @@ public class InsertionStrategyTest {
     assertThrows(ArrayIndexOutOfBoundsException.class, () -> ArraySorter.sortArray(unsorted, begin, end, strat));
   }
 
+  @DisplayName("sortArray() should sort a large array")
   @Test
   public void testSortLarge() {
     Integer[] unsorted = Stream.iterate(999, i -> i-1).limit(1000).toArray(Integer[]::new);
@@ -85,6 +92,7 @@ public class InsertionStrategyTest {
     assertArrayEquals(expected, unsorted);
   }
 
+  @DisplayName("sortArray() should sort a large array with a comparator")
   @Test
   public void testReversedSortLarge() {
     Integer[] unsorted = Stream.iterate(0, i -> i+1).limit(1000).toArray(Integer[]::new);
@@ -96,6 +104,7 @@ public class InsertionStrategyTest {
     assertArrayEquals(expected, unsorted);
   }
 
+  @DisplayName("sortArray() should sort an array of distinct elements with a remainder-8 ordering")
   @Test
   public void testRem8DistinctSort() {
     Integer[] unsorted = { 110, 93, 84, 43, 26, 9 };
@@ -107,6 +116,7 @@ public class InsertionStrategyTest {
     assertArrayEquals(expected, unsorted);
   }
 
+  @DisplayName("sortArray() should sort an array with a remainder-8 ordering")
   @Test
   public void testRem8DuplicateSort() {
     Integer[] unsorted = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
@@ -118,6 +128,7 @@ public class InsertionStrategyTest {
     assertArrayEquals(expected, unsorted);
   }
 
+  @DisplayName("sortArray() should sort an array with an odd-even ordering")
   @Test
   public void testOddEvenSort() {
     Integer[] unsorted = { 1, 4, 2, 3 };
@@ -144,6 +155,7 @@ public class InsertionStrategyTest {
     }
   }
 
+  @DisplayName("sortArray() should sort an animal record array with a custom ordering")
   @Test
   public void testAnimalRecordSort() {
     final AnimalRecord[] rec = {
