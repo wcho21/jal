@@ -6,12 +6,14 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 import java.util.stream.Stream;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
 public class InversionTest {
-  @ParameterizedTest
+  @DisplayName("count() should count")
+  @ParameterizedTest(name = "{1} inversions")
   @MethodSource("successProvider")
   public void testSuccess(Integer[] arr, int expected) {
     int numInversions = count(arr);

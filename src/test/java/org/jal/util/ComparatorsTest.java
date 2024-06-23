@@ -4,11 +4,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.Comparator;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
 public class ComparatorsTest {
-  @ParameterizedTest
+  @DisplayName("isLessThan()")
+  @ParameterizedTest(name = "should be {2} for {0} and {1}")
   @CsvSource({
     "0,1,true",
     "1,1,false",
@@ -20,7 +22,8 @@ public class ComparatorsTest {
     assertEquals(expected, greater);
   }
 
-  @ParameterizedTest
+  @DisplayName("isLessThanOrEqualTo()")
+  @ParameterizedTest(name = "should be {2} for {0} and {1}")
   @CsvSource({
     "0,1,true",
     "1,1,true",
@@ -32,7 +35,8 @@ public class ComparatorsTest {
     assertEquals(expected, greater);
   }
 
-  @ParameterizedTest
+  @DisplayName("isEqualTo()")
+  @ParameterizedTest(name = "should be {2} for {0} and {1}")
   @CsvSource({
     "0,1,false",
     "1,1,true",
@@ -44,7 +48,8 @@ public class ComparatorsTest {
     assertEquals(expected, greater);
   }
 
-  @ParameterizedTest
+  @DisplayName("isGreaterThanOrEqualTo()")
+  @ParameterizedTest(name = "should be {2} for {0} and {1}")
   @CsvSource({
     "0,1,false",
     "1,1,true",
@@ -56,7 +61,8 @@ public class ComparatorsTest {
     assertEquals(expected, greater);
   }
 
-  @ParameterizedTest
+  @DisplayName("isGreaterThan()")
+  @ParameterizedTest(name = "should be {2} for {0} and {1}")
   @CsvSource({
     "0,1,false",
     "1,1,false",
