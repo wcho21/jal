@@ -3,16 +3,16 @@ package org.jal.collections.list;
 import java.util.NoSuchElementException;
 
 public class LinkedList<T> {
-  private LinkedListNode<T> head;
+  private LinkedNode<T> head;
   private int size;
 
   public LinkedList() {
-    this.head = new LinkedListNode<>(); // sentinel
+    this.head = new LinkedNode<>(); // sentinel
     this.size = 0;
   }
 
   public void prepend(T data) {
-    LinkedListNode<T> node = new LinkedListNode<>(data, head);
+    LinkedNode<T> node = new LinkedNode<>(data, head);
     this.head = node;
 
     this.size++;
@@ -21,7 +21,7 @@ public class LinkedList<T> {
   public void remove() {
     this.throwIfEmpty();
 
-    this.head = this.head.next;
+    this.head = this.head.getNext();
 
     this.size--;
   }
@@ -29,7 +29,7 @@ public class LinkedList<T> {
   public T getData() {
     this.throwIfEmpty();
 
-    return this.head.data;
+    return this.head.getData();
   }
 
   public int getSize() {

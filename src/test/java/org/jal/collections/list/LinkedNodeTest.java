@@ -5,24 +5,24 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-public class LinkedListNodeTest {
+public class LinkedNodeTest {
   @DisplayName("should initialize without arguments")
   @Test
   public void testInitWithoutArguments() {
-    LinkedListNode<Integer> node = new LinkedListNode<>();
+    LinkedNode<Integer> node = new LinkedNode<>();
 
-    assertEquals(null, node.data);
-    assertEquals(null, node.next);
+    assertEquals(null, node.getData());
+    assertEquals(null, node.getNext());
   }
 
   @DisplayName("should initialize with arguments")
   @Test
   public void testInitWithArguments() {
-    LinkedListNode<Integer> next, node;
-    next = new LinkedListNode<>(42, null);
-    node = new LinkedListNode<>(43, next);
+    LinkedNode<Integer> next, node;
+    next = new LinkedNode<>(42, null);
+    node = new LinkedNode<>(43, next);
 
-    assertEquals(43, node.data);
-    assertEquals(next, node.next);
+    assertEquals(43, node.getData());
+    assertEquals(next, node.getNext());
   }
 }
