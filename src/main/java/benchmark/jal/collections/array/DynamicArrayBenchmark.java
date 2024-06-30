@@ -1,4 +1,4 @@
-package benchmark.jal.collections.list;
+package benchmark.jal.collections.array;
 
 import java.util.concurrent.TimeUnit;
 
