@@ -10,9 +10,9 @@
 
 - [두 가지 방법으로 만드는 스택](https://drop.rooi.dev/posts/2024/05/09/01)
 
-  - 연결 리스트: [LinkedList.java](./src/main/java/org/jal/collections/list/LinkedList.java)
+  - 링크드 리스트: [LinkedList.java](./src/main/java/org/jal/collections/list/LinkedList.java)
 
-  - 연결 리스트 스택: [ListStack.java](./src/main/java/org/jal/collections/stack/ListStack.java)
+  - 링크드 리스트 스택: [ListStack.java](./src/main/java/org/jal/collections/stack/ListStack.java)
 
   - 다이나믹 배열: [DynamicArray.java](./src/main/java/org/jal/collections/array/DynamicArray.java)
 
@@ -55,3 +55,17 @@
   - 랜더마이즈드 쓰리웨이 파티셔닝: [RandThreeWayStrategy.java](./src/main/java/org/jal/partition/RandThreeWayStrategy.java)
 
   - 쓰리웨이 퀵소트: [ThreeWayQuickStrategy.java](./src/main/java/org/jal/sorting/strategy/arrays/ThreeWayQuickStrategy.java)
+
+- [링크드 리스트로 만드는 딕셔너리](https://drop.rooi.dev/posts/2024/06/29/01/)
+
+  - 서큘러 링크드 리스트: [AssocList.java](./src/main/java/org/jal/collections/list/CircularLinkedList.java)
+
+  - 연관 리스트: [AssocList.java](./src/main/java/org/jal/collections/dictionary/AssocList.java)
+
+  - 고정 크기 체이닝 해시 테이블: [FixedChainingTable.java](./src/main/java/org/jal/collections/dictionary/FixedChainingTable.java)
+
+  - 리사이징 체이닝 해시 테이블: [ChainingTable.java](./src/main/java/org/jal/collections/dictionary/ChainingTable.java)
+
+  - 체이닝 해시 셋: [ChainingSet.java](./src/main/java/org/jal/collections/set/ChainingSet.java)
+
+  - 체이닝 해시 맵: [ChainingMap.java](./src/main/java/org/jal/collections/map/ChainingMap.java)

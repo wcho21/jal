@@ -11,6 +11,12 @@ public class LinkedList<T> {
     this.size = 0;
   }
 
+  public T getData() {
+    this.throwIfEmpty();
+
+    return this.head.getData();
+  }
+
   public void prepend(T data) {
     LinkedNode<T> node = new LinkedNode<>(data, head);
     this.head = node;
@@ -24,12 +30,6 @@ public class LinkedList<T> {
     this.head = this.head.getNext();
 
     this.size--;
-  }
-
-  public T getData() {
-    this.throwIfEmpty();
-
-    return this.head.getData();
   }
 
   public int getSize() {
