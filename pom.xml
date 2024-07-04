@@ -2,8 +2,8 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.jal</groupId>
-  <artifactId>test</artifactId>
-  <version>1.0.0-SNAPSHOPT</version>
+  <artifactId>jal</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <properties>
@@ -122,37 +122,30 @@
           </execution>
         </executions>
       </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.1.0</version>
+        <configuration>
+          <archive>
+            <manifest>
+              <addClasspath>true</addClasspath>
+              <mainClass>org.jal.apps.Apps</mainClass>
+            </manifest>
+          </archive>
+        </configuration>
+      </plugin>
     </plugins>
     <pluginManagement>
       <plugins>
         <plugin>
-          <artifactId>maven-clean-plugin</artifactId>
-          <version>2.5</version>
-          </plugin>
-        <plugin>
-          <artifactId>maven-deploy-plugin</artifactId>
-          <version>2.8.1</version>
-          </plugin>
-        <plugin>
-          <artifactId>maven-install-plugin</artifactId>
-          <version>2.5.1</version>
-          </plugin>
-        <plugin>
-          <artifactId>maven-jar-plugin</artifactId>
-          <version>2.4</version>
-          </plugin>
-        <plugin>
-          <artifactId>maven-javadoc-plugin</artifactId>
-          <version>2.9.1</version>
-          </plugin>
-        <plugin>
           <artifactId>maven-resources-plugin</artifactId>
           <version>2.6</version>
-          </plugin>
+        </plugin>
         <plugin>
           <artifactId>maven-site-plugin</artifactId>
           <version>3.3</version>
-          </plugin>
+        </plugin>
         <plugin>
           <artifactId>maven-source-plugin</artifactId>
           <version>2.2.1</version>
