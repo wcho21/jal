@@ -1,10 +1,10 @@
 package benchmark.jal.collections.dictionary;
 
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.HashSet;
 import java.util.Random;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
-import java.util.stream.Stream;
+import java.util.stream.StreamSupport;
 
 import org.jal.collections.dictionary.FixedChainingTable;
 import org.openjdk.jmh.annotations.Benchmark;
@@ -23,6 +23,7 @@ import org.openjdk.jmh.annotations.State;
 public class FixedChainingTableGetBenchmark {
   private FixedChainingTable<Integer, Integer> table;
   private Random rand = new Random();
+  private Integer[] nums;
 
   @Param({"128", "256", "512", "1024", "2048", "4096", "8192", "16384", "32768", "65536", "131072"})
   int size;
@@ -30,8 +31,11 @@ public class FixedChainingTableGetBenchmark {
   @Setup(Level.Iteration)
   public void setup() {
     // initialize shuffled numbers
-    ArrayList<Integer> nums = new ArrayList<>(Stream.iterate(0, i->i+1).limit(this.size).toList());
-    Collections.shuffle(nums, this.rand);
+    Set<Integer> nums = new HashSet<>();
+    while (nums.size() < this.size) {
+      nums.add(this.rand.nextInt(Integer.MAX_VALUE));
+    }
+    this.nums = StreamSupport.stream(nums.spliterator(), false).toArray(Integer[]::new);
 
     // initialize a table
     this.table = new FixedChainingTable<>(v -> v);
@@ -42,7 +46,8 @@ public class FixedChainingTableGetBenchmark {
 
   @Benchmark
   public int measureGet() {
-    int value = this.table.get(this.rand.nextInt(this.size));
+    int key = this.nums[this.rand.nextInt(this.size)];
+    int value = this.table.get(key);
     return value;
   }
 }
