@@ -5,6 +5,7 @@ public class Hashes {
     int num = toHash.hashCode();
     int pow = getPowerOfTwo(bound);
 
+    // fibonacci hashing
     int hash = (((num * 1327217885) & 0x7FFFFFFF) >> (31 - pow));
     return hash;
   }
