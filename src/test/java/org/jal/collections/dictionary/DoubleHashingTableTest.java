@@ -1,43 +1,17 @@
 package org.jal.collections.dictionary;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
-public class FixedChainingTableTest {
-  @DisplayName("Student attendance scenario")
-  @Test
-  public void testAttendance() {
-    FixedChainingTable<String, String> table = new FixedChainingTable<>(v -> v);
-
-    table.set("John");
-    table.set("Jane");
-
-    assertNotEquals(null, table.get("John"));
-    assertNotEquals(null, table.get("Jane"));
-    assertEquals(null, table.get("Tom"));
-
-    table.set("Tom");
-
-    assertNotEquals(null, table.get("John"));
-    assertNotEquals(null, table.get("Jane"));
-    assertNotEquals(null, table.get("Tom"));
-
-    table.remove("John");
-
-    assertEquals(null, table.get("John"));
-    assertNotEquals(null, table.get("Jane"));
-    assertNotEquals(null, table.get("Tom"));
-  }
-
+public class DoubleHashingTableTest {
   @DisplayName("string")
   @Nested
   class PlainStringTest {
     private Dictionary<String, String> createStringTable() {
-      Dictionary<String, String> table = new FixedChainingTable<>(v -> v);
+      Dictionary<String, String> table = new DoubleHashingTable<>(v -> v);
       table.set("foo");
       table.set("bar");
       table.set("baz");
@@ -46,7 +20,7 @@ public class FixedChainingTableTest {
     }
 
     private Dictionary<Integer, String> createLengthToStringTable() {
-      Dictionary<Integer, String> table = new FixedChainingTable<>(v -> v.length());
+      Dictionary<Integer, String> table = new DoubleHashingTable<>(v -> v.length());
       table.set("foo");
       table.set("quux");
 
@@ -54,7 +28,7 @@ public class FixedChainingTableTest {
     }
 
     private Dictionary<Integer, Integer> createLargeIntTable(int size) {
-      Dictionary<Integer, Integer> table = new FixedChainingTable<>(v -> v);
+      Dictionary<Integer, Integer> table = new DoubleHashingTable<>(v -> v);
       for (int i = 0; i < size; ++i) {
         table.set(i);
       }

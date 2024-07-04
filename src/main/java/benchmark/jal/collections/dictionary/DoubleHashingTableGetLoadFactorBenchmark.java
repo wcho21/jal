@@ -6,7 +6,7 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.StreamSupport;
 
-import org.jal.collections.dictionary.ChainingTable;
+import org.jal.collections.dictionary.DoubleHashingTable;
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.BenchmarkMode;
 import org.openjdk.jmh.annotations.Level;
@@ -20,16 +20,21 @@ import org.openjdk.jmh.annotations.State;
 @BenchmarkMode(Mode.AverageTime)
 @OutputTimeUnit(TimeUnit.NANOSECONDS)
 @State(Scope.Thread)
-public class ChainingTableGetBenchmark {
-  private ChainingTable<Integer, Integer> table;
+public class DoubleHashingTableGetLoadFactorBenchmark {
+  private DoubleHashingTable<Integer, Integer> table;
   private Random rand = new Random();
   private Integer[] nums;
+  private int numSlots = 131072;
+  private int size;
 
-  @Param({"128", "256", "512", "1024", "2048", "4096", "8192", "16384", "32768", "65536", "131072"})
-  int size;
+  // load factor must be >= 0.375 and < 0.75 due to implementation
+  @Param({"0.375", "0.4", "0.425", "0.45", "0.475", "0.5", "0.525", "0.55", "0.575", "0.6", "0.625", "0.65", "0.675", "0.7", "0.725"})
+  double loadFactor;
 
   @Setup(Level.Iteration)
   public void setup() {
+    this.size = (int)(this.numSlots * loadFactor);
+
     // initialize shuffled numbers
     Set<Integer> nums = new HashSet<>();
     while (nums.size() < this.size) {
@@ -38,14 +43,14 @@ public class ChainingTableGetBenchmark {
     this.nums = StreamSupport.stream(nums.spliterator(), false).toArray(Integer[]::new);
 
     // initialize a table
-    this.table = new ChainingTable<>(v -> v);
+    this.table = new DoubleHashingTable<>(v -> v);
     for (int num : nums) {
       this.table.set(num);
     }
   }
 
   @Benchmark
-  public int measureGet() {
+  public int measureGet() { // successful get
     int key = this.nums[this.rand.nextInt(this.size)];
     int value = this.table.get(key);
     return value;

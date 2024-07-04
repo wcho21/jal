@@ -69,3 +69,19 @@
   - 체이닝 해시 셋: [ChainingSet.java](./src/main/java/org/jal/collections/set/ChainingSet.java)
 
   - 체이닝 해시 맵: [ChainingMap.java](./src/main/java/org/jal/collections/map/ChainingMap.java)
+
+- [배열로 만드는 딕셔너리](https://drop.rooi.dev/posts/2024/07/04/01/)
+
+  - 리니어 프로빙 해시 테이블: [LinearProbingTable.java](./src/main/java/org/jal/collections/dictionary/LinearProbingTable.java)
+
+  - 더블 해싱 해시 테이블: [DoubleHashTable.java](./src/main/java/org/jal/collections/dictionary/DoubleHashingTable.java)
+
+  - 피보나치 해싱: [Hashes.java](./src/main/java/org/jal/util/Hashes.java)
+
+  - 리니어 프로빙 셋: [ChainingTable.java](./src/main/java/org/jal/collections/set/LinearProbingSet.java)
+
+  - 리니어 프로빙 맵: [LinearProbingMap.java](./src/main/java/org/jal/collections/map/LinearProbingMap.java)
+
+  - 더블 해싱 셋: [LinearProbingMap.java](./src/main/java/org/jal/collections/set/DoubleHashingSet.java)
+
+  - 더블 해싱 맵: [ChainingTable.java](./src/main/java/org/jal/collections/map/DoubleHashingMap.java)

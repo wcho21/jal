@@ -1,17 +1,21 @@
 package org.jal.collections.dictionary;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertIterableEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
+
+import java.util.stream.Stream;
+import java.util.stream.StreamSupport;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
-public class FixedChainingTableTest {
+public class LinearProbingTableTest {
   @DisplayName("Student attendance scenario")
   @Test
   public void testAttendance() {
-    FixedChainingTable<String, String> table = new FixedChainingTable<>(v -> v);
+    LinearProbingTable<String, String> table = new LinearProbingTable<>(v -> v);
 
     table.set("John");
     table.set("Jane");
@@ -37,7 +41,7 @@ public class FixedChainingTableTest {
   @Nested
   class PlainStringTest {
     private Dictionary<String, String> createStringTable() {
-      Dictionary<String, String> table = new FixedChainingTable<>(v -> v);
+      Dictionary<String, String> table = new LinearProbingTable<>(v -> v);
       table.set("foo");
       table.set("bar");
       table.set("baz");
@@ -46,7 +50,7 @@ public class FixedChainingTableTest {
     }
 
     private Dictionary<Integer, String> createLengthToStringTable() {
-      Dictionary<Integer, String> table = new FixedChainingTable<>(v -> v.length());
+      Dictionary<Integer, String> table = new LinearProbingTable<>(v -> v.length());
       table.set("foo");
       table.set("quux");
 
@@ -54,7 +58,7 @@ public class FixedChainingTableTest {
     }
 
     private Dictionary<Integer, Integer> createLargeIntTable(int size) {
-      Dictionary<Integer, Integer> table = new FixedChainingTable<>(v -> v);
+      Dictionary<Integer, Integer> table = new LinearProbingTable<>(v -> v);
       for (int i = 0; i < size; ++i) {
         table.set(i);
       }
@@ -173,6 +177,18 @@ public class FixedChainingTableTest {
         table.remove(i);
       }
       assertEquals(0, table.getSize());
+    }
+
+    @DisplayName("should be iterable")
+    @Test
+    public void testIterable() {
+      int size = 100;
+      Dictionary<Integer, Integer> table = createLargeIntTable(size);
+      Iterable<Integer> values = table.getValues();
+
+      Iterable<Integer> expected = Stream.iterate(0, i->i+1).limit(size).toList();
+      Iterable<Integer> sortedValues = StreamSupport.stream(values.spliterator(), false).sorted().toList();
+      assertIterableEquals(expected, sortedValues);
     }
   }
 

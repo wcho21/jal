@@ -6,7 +6,7 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.StreamSupport;
 
-import org.jal.collections.dictionary.ChainingTable;
+import org.jal.collections.dictionary.LinearProbingTable;
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.BenchmarkMode;
 import org.openjdk.jmh.annotations.Level;
@@ -20,12 +20,13 @@ import org.openjdk.jmh.annotations.State;
 @BenchmarkMode(Mode.AverageTime)
 @OutputTimeUnit(TimeUnit.NANOSECONDS)
 @State(Scope.Thread)
-public class ChainingTableGetBenchmark {
-  private ChainingTable<Integer, Integer> table;
+public class LinearProbingTableGetBenchmark {
+  private LinearProbingTable<Integer, Integer> table;
   private Random rand = new Random();
   private Integer[] nums;
 
-  @Param({"128", "256", "512", "1024", "2048", "4096", "8192", "16384", "32768", "65536", "131072"})
+  // load factor 0.375
+  @Param({"48", "96", "192", "384", "768", "1536", "3072", "6144", "12288", "24576", "49152", "98304"})
   int size;
 
   @Setup(Level.Iteration)
@@ -38,7 +39,7 @@ public class ChainingTableGetBenchmark {
     this.nums = StreamSupport.stream(nums.spliterator(), false).toArray(Integer[]::new);
 
     // initialize a table
-    this.table = new ChainingTable<>(v -> v);
+    this.table = new LinearProbingTable<>(v -> v);
     for (int num : nums) {
       this.table.set(num);
     }
