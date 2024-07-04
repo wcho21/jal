@@ -1,10 +1,11 @@
 package org.jal.collections.map;
 
 import org.jal.collections.dictionary.ChainingTable;
+import org.jal.collections.dictionary.Dictionary;
 import org.jal.util.Pair;
 
 public class ChainingMap<K, V> implements Map<K, V> {
-  private ChainingTable<K, Pair<K, V>> dict;
+  private Dictionary<K, Pair<K, V>> dict;
 
   public ChainingMap() {
     this.dict = new ChainingTable<>(Pair::getFirst);

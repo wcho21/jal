@@ -36,4 +36,25 @@ public class ChainingMapTest {
       assertEquals(false, map.get("Tom"));
     }
   }
+
+  @DisplayName("large number of values")
+  @Nested
+  class LargeTest {
+    static int SIZE = 1000;
+
+    @DisplayName("get() should get the item if found")
+    @Test
+    public void testSetAndGets() {
+      Map<Integer, Boolean> map = new ChainingMap<>();
+      for (int i = 0; i < SIZE; ++i) {
+        boolean odd = i % 2 == 1 ? true : false;
+        map.set(i, odd);
+      }
+
+      for (int i = 0; i < SIZE; ++i) {
+        boolean expected = i % 2 == 1 ? true : false;
+        assertEquals(expected, map.get(i));
+      }
+    }
+  }
 }
