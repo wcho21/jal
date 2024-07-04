@@ -78,10 +78,10 @@
 
   - 피보나치 해싱: [Hashes.java](./src/main/java/org/jal/util/Hashes.java)
 
-  - 리니어 프로빙 셋: [ChainingTable.java](./src/main/java/org/jal/collections/set/LinearProbingSet.java)
+  - 리니어 프로빙 셋: [LinearProbingSet.java](./src/main/java/org/jal/collections/set/LinearProbingSet.java)
 
   - 리니어 프로빙 맵: [LinearProbingMap.java](./src/main/java/org/jal/collections/map/LinearProbingMap.java)
 
-  - 더블 해싱 셋: [LinearProbingMap.java](./src/main/java/org/jal/collections/set/DoubleHashingSet.java)
+  - 더블 해싱 셋: [DoubleHashingSet.java](./src/main/java/org/jal/collections/set/DoubleHashingSet.java)
 
-  - 더블 해싱 맵: [ChainingTable.java](./src/main/java/org/jal/collections/map/DoubleHashingMap.java)
+  - 더블 해싱 맵: [DoubleHashingMap.java](./src/main/java/org/jal/collections/map/DoubleHashingMap.java)
