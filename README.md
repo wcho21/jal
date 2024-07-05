@@ -58,7 +58,7 @@
 
 - [링크드 리스트로 만드는 딕셔너리](https://drop.rooi.dev/posts/2024/06/29/01/)
 
-  - 서큘러 링크드 리스트: [AssocList.java](./src/main/java/org/jal/collections/list/CircularLinkedList.java)
+  - 서큘러 링크드 리스트: [CircularLinkedList.java](./src/main/java/org/jal/collections/list/CircularLinkedList.java)
 
   - 연관 리스트: [AssocList.java](./src/main/java/org/jal/collections/dictionary/AssocList.java)
 
