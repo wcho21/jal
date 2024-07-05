@@ -6,14 +6,14 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
-public class DoubleHashingSetTest {
+public class ChainingSetTestExample {
   @DisplayName("string")
   @Nested
   class PlainStringTest {
     @DisplayName("has() should be true if found")
     @Test
     public void testSetAndHas() {
-      Set<String> set = new DoubleHashingSet<>();
+      Set<String> set = new ChainingSet<>();
 
       set.set("Jane");
 

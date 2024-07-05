@@ -6,14 +6,14 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
-public class DoubleHashingMapTest {
+public class ChainingMapTestExample {
   @DisplayName("string")
   @Nested
   class PlainStringTest {
     @DisplayName("get() should get the item if found")
     @Test
     public void testSetAndGets() {
-      Map<String, Boolean> map = new DoubleHashingMap<>();
+      Map<String, Boolean> map = new ChainingMap<>();
 
       map.set("John", false);
       map.set("Jane", true);
@@ -45,7 +45,7 @@ public class DoubleHashingMapTest {
     @DisplayName("get() should get the item if found")
     @Test
     public void testSetAndGets() {
-      Map<Integer, Boolean> map = new DoubleHashingMap<>();
+      Map<Integer, Boolean> map = new ChainingMap<>();
       for (int i = 0; i < SIZE; ++i) {
         boolean odd = i % 2 == 1 ? true : false;
         map.set(i, odd);
