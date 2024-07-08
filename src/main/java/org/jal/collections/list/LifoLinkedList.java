@@ -2,16 +2,16 @@ package org.jal.collections.list;
 
 import java.util.NoSuchElementException;
 
-public class LinkedList<T> {
+public class LifoLinkedList<T> {
   private LinkedNode<T> head;
   private int size;
 
-  public LinkedList() {
+  public LifoLinkedList() {
     this.head = new LinkedNode<>(); // sentinel
     this.size = 0;
   }
 
-  public T getData() {
+  public T getFirst() {
     this.throwIfEmpty();
 
     return this.head.getData();

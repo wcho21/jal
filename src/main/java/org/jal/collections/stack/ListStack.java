@@ -1,12 +1,12 @@
 package org.jal.collections.stack;
 
-import org.jal.collections.list.LinkedList;
+import org.jal.collections.list.LifoLinkedList;
 
 public class ListStack<T> implements Stack<T> {
-  private LinkedList<T> list;
+  private LifoLinkedList<T> list;
 
   public ListStack() {
-    this.list = new LinkedList<>();
+    this.list = new LifoLinkedList<>();
   }
 
   public void push(T data) {
@@ -14,14 +14,14 @@ public class ListStack<T> implements Stack<T> {
   }
 
   public T pop() {
-    T data = this.list.getData();
+    T data = this.list.getFirst();
     this.list.remove();
 
     return data;
   }
 
   public T peek() {
-    return this.list.getData();
+    return this.list.getFirst();
   }
 
   public int getSize() {

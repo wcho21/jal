@@ -216,6 +216,15 @@ public class SortStrategyTest {
         return new ThreeWayQuickStrategy<>(new RandThreeWayStrategy<>((begin, end) -> begin + (end-begin)/2));
       }
     }
+
+    @DisplayName("HeapStrategy class")
+    @Nested
+    class HeapStreategyTest extends CommonSortTest {
+      @Override
+      protected <T> ArraySortStrategy<T> createStrategy() {
+        return new HeapStrategy<>();
+      }
+    }
   }
 
   @DisplayName("Stability")
