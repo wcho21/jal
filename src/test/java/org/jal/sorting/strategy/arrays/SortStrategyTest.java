@@ -32,6 +32,24 @@ abstract class CommonSortTest {
     assertArrayEquals(expected, toSort);
   }
 
+  @DisplayName("should sort an array with an interval")
+  @Test
+  public void testSortInterval() {
+    Integer[] toSort = Stream.iterate(ARRAY_SIZE-1, i -> i-1).limit(ARRAY_SIZE).toArray(Integer[]::new);
+    Integer[] expected = Stream.concat(
+      Stream.iterate(ARRAY_SIZE-1, i -> i-1).limit(ARRAY_SIZE/4),
+      Stream.concat(
+        Stream.iterate(ARRAY_SIZE/4, i -> i+1).limit(ARRAY_SIZE/2), // only mid is sorted
+        Stream.iterate(ARRAY_SIZE/4-1, i -> i-1).limit(ARRAY_SIZE/4)
+      )
+    ).toArray(Integer[]::new);
+    ArraySortStrategy<Integer> strat = this.createStrategy();
+
+    ArraySorter.sortArray(toSort, ARRAY_SIZE/4, 3*(ARRAY_SIZE/4), strat);
+
+    assertArrayEquals(expected, toSort);
+  }
+
   @DisplayName("should sort an array with a remainder-8 ordering")
   @Test
   public void testRem8DuplicateSort() {
