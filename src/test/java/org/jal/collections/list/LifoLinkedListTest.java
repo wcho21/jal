@@ -8,48 +8,50 @@ import java.util.NoSuchElementException;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-public class LinkedListTest {
-  @DisplayName("getData() should throw if empty")
+public class LifoLinkedListTest {
+  @DisplayName("getFirst() should throw if empty")
   @Test
-  public void testGetHeadForEmptyList() {
-    LinkedList<Integer> list = new LinkedList<>();
+  public void testGetLastForEmptyList() {
+    LifoLinkedList<Integer> list = new LifoLinkedList<>();
 
-    assertThrows(NoSuchElementException.class, () -> list.getData());
+    assertThrows(NoSuchElementException.class, () -> list.getFirst());
   }
 
-  @DisplayName("getData() should get the head")
+  @DisplayName("getFirst() should get the last data")
   @Test
-  public void testGetHeadForNonemptyList() {
-    LinkedList<Integer> list = new LinkedList<>();
+  public void testGetLastForNonemptyList() {
+    LifoLinkedList<Integer> list = new LifoLinkedList<>();
     list.prepend(42);
     list.prepend(43);
+    list.prepend(44);
 
-    assertEquals(43, list.getData());
+    assertEquals(44, list.getFirst());
   }
 
   @DisplayName("remove() should throw if empty")
   @Test
   public void testRemoveForEmptyList() {
-    LinkedList<Integer> list = new LinkedList<>();
+    LifoLinkedList<Integer> list = new LifoLinkedList<>();
 
     assertThrows(NoSuchElementException.class, () -> list.remove());
   }
 
-  @DisplayName("remove() should remove the head")
+  @DisplayName("remove() should remove the last data")
   @Test
   public void testRemoveForNonemptyList() {
-    LinkedList<Integer> list = new LinkedList<>();
+    LifoLinkedList<Integer> list = new LifoLinkedList<>();
     list.prepend(42);
     list.prepend(43);
+    list.prepend(44);
     list.remove();
 
-    assertEquals(42, list.getData());
+    assertEquals(43, list.getFirst());
   }
 
-  @DisplayName("getSize() should get the size as zero if empty")
+  @DisplayName("getSize() should get zero if empty")
   @Test
   public void testGetSizeForEmptyList() {
-    LinkedList<Integer> list = new LinkedList<>();
+    LifoLinkedList<Integer> list = new LifoLinkedList<>();
 
     assertEquals(0, list.getSize());
   }
@@ -57,7 +59,7 @@ public class LinkedListTest {
   @DisplayName("getSize() should get the size")
   @Test
   public void testGetSizeForNonemptyList() {
-    LinkedList<Integer> list = new LinkedList<>();
+    LifoLinkedList<Integer> list = new LifoLinkedList<>();
     list.prepend(42);
     list.prepend(43);
     list.prepend(44);
@@ -68,7 +70,7 @@ public class LinkedListTest {
   @DisplayName("isEmpty() should be true if empty")
   @Test
   public void testIsEmptyForEmptyList() {
-    LinkedList<Integer> list = new LinkedList<>();
+    LifoLinkedList<Integer> list = new LifoLinkedList<>();
 
     assertEquals(true, list.isEmpty());
   }
@@ -76,7 +78,7 @@ public class LinkedListTest {
   @DisplayName("isEmpty() should be false if nonempty")
   @Test
   public void testIsEmptyForNonemptyList() {
-    LinkedList<Integer> list = new LinkedList<>();
+    LifoLinkedList<Integer> list = new LifoLinkedList<>();
     list.prepend(42);
     list.prepend(43);
 
