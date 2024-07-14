@@ -57,7 +57,7 @@ public class Heapifier<T> {
     int left = getLeftChild(index, root);
     assert left <= last;
 
-    // return left child if a sole one
+    // return left child if no right one
     int right = getRightChild(index, root);
     if (right > last) {
       return left;
