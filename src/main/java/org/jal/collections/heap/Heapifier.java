@@ -55,9 +55,7 @@ public class Heapifier<T> {
 
   private int getLargerChildIndex(int index, int root, int last) {
     int left = getLeftChild(index, root);
-    if (left > last) {
-      return -1;
-    }
+    assert left <= last;
 
     // return left child if a sole one
     int right = getRightChild(index, root);
