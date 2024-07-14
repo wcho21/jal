@@ -2,13 +2,17 @@ package org.jal.collections.queue;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertIterableEquals;
+import static org.junit.jupiter.api.Named.named;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.List;
 import java.util.stream.Stream;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Named;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -49,6 +53,10 @@ abstract class CommonTest {
 }
 
 public class QueueTest {
+  private static Named<List<Integer>> INC_NUMS  = named("increasing numbers", Arrays.asList(1, 2, 3, 4, 5, 6, 7));
+  private static Named<List<Integer>> DEC_NUMS  = named("decreasing numbers", Arrays.asList(7, 6, 5, 4, 3, 2, 1));
+  private static Named<List<Integer>> SHUF_NUMS = named("shuffled numbers",   Arrays.asList(1, 7, 2, 6, 3, 5, 4));
+
   @DisplayName("HeapPriorityQueue")
   @Nested
   class HeapPriorityQueueTest extends CommonTest {
@@ -58,7 +66,7 @@ public class QueueTest {
     }
 
     @DisplayName("poll() should pop out elements in a specific order")
-    @ParameterizedTest()
+    @ParameterizedTest(name = "for {0}")
     @MethodSource("pollProvider")
     public void testPoll(Iterable<Integer> toAdd, Iterable<Integer> expected) {
       Queue<Integer> q = this.createQueue();
@@ -71,15 +79,17 @@ public class QueueTest {
     }
 
     static Stream<Arguments> pollProvider() {
+      List<Integer> largestFirst = Arrays.asList(7, 6, 5, 4, 3, 2, 1);
+
       return Stream.of(
-        arguments(Arrays.asList(1, 2, 3, 4, 5, 6, 7), Arrays.asList(7, 6, 5, 4, 3, 2, 1)),
-        arguments(Arrays.asList(7, 6, 5, 4, 3, 2, 1), Arrays.asList(7, 6, 5, 4, 3, 2, 1)),
-        arguments(Arrays.asList(1, 7, 2, 6, 3, 5, 4), Arrays.asList(7, 6, 5, 4, 3, 2, 1))
+        arguments(INC_NUMS,  largestFirst),
+        arguments(DEC_NUMS,  largestFirst),
+        arguments(SHUF_NUMS, largestFirst)
       );
     }
 
     @DisplayName("peek() should get the next value")
-    @ParameterizedTest()
+    @ParameterizedTest(name = "for {0}")
     @MethodSource("peekProvider")
     public void testPeek(Iterable<Integer> toAdd, int expected) {
       Queue<Integer> q = this.createQueue();
@@ -91,10 +101,12 @@ public class QueueTest {
     }
 
     static Stream<Arguments> peekProvider() {
+      int largest = 7;
+
       return Stream.of(
-        arguments(Arrays.asList(1, 2, 3, 4, 5, 6, 7), 7),
-        arguments(Arrays.asList(7, 6, 5, 4, 3, 2, 1), 7),
-        arguments(Arrays.asList(1, 7, 2, 6, 3, 5, 4), 7)
+        arguments(INC_NUMS,  largest),
+        arguments(DEC_NUMS,  largest),
+        arguments(SHUF_NUMS, largest)
       );
     }
   }
@@ -108,7 +120,7 @@ public class QueueTest {
     }
 
     @DisplayName("poll() should pop out elements in a specific order")
-    @ParameterizedTest()
+    @ParameterizedTest(name = "for {0}")
     @MethodSource("pollProvider")
     public void testPoll(Iterable<Integer> toAdd, Iterable<Integer> expected) {
       Queue<Integer> q = this.createQueue();
@@ -122,14 +134,14 @@ public class QueueTest {
 
     static Stream<Arguments> pollProvider() {
       return Stream.of(
-        arguments(Arrays.asList(1, 2, 3, 4, 5, 6, 7), Arrays.asList(7, 6, 5, 4, 3, 2, 1)),
-        arguments(Arrays.asList(7, 6, 5, 4, 3, 2, 1), Arrays.asList(1, 2, 3, 4, 5, 6, 7)),
-        arguments(Arrays.asList(1, 7, 2, 6, 3, 5, 4), Arrays.asList(4, 5, 3, 6, 2, 7, 1))
+        arguments(INC_NUMS,  Arrays.asList(7, 6, 5, 4, 3, 2, 1)),
+        arguments(DEC_NUMS,  Arrays.asList(1, 2, 3, 4, 5, 6, 7)),
+        arguments(SHUF_NUMS, Arrays.asList(4, 5, 3, 6, 2, 7, 1))
       );
     }
 
     @DisplayName("peek() should get the next value")
-    @ParameterizedTest()
+    @ParameterizedTest(name = "for {0}")
     @MethodSource("peekProvider")
     public void testPeek(Iterable<Integer> toAdd, int expected) {
       Queue<Integer> q = this.createQueue();
@@ -142,9 +154,9 @@ public class QueueTest {
 
     static Stream<Arguments> peekProvider() {
       return Stream.of(
-        arguments(Arrays.asList(1, 2, 3, 4, 5, 6, 7), 7),
-        arguments(Arrays.asList(7, 6, 5, 4, 3, 2, 1), 1),
-        arguments(Arrays.asList(1, 7, 2, 6, 3, 5, 4), 4)
+        arguments(INC_NUMS, 7),
+        arguments(DEC_NUMS, 1),
+        arguments(SHUF_NUMS, 4)
       );
     }
   }
@@ -158,7 +170,7 @@ public class QueueTest {
     }
 
     @DisplayName("poll() should pop out elements in a specific order")
-    @ParameterizedTest()
+    @ParameterizedTest(name = "for {0}")
     @MethodSource("pollProvider")
     public void testPoll(Iterable<Integer> toAdd, Iterable<Integer> expected) {
       Queue<Integer> q = this.createQueue();
@@ -172,14 +184,14 @@ public class QueueTest {
 
     static Stream<Arguments> pollProvider() {
       return Stream.of(
-        arguments(Arrays.asList(1, 2, 3, 4, 5, 6, 7), Arrays.asList(1, 2, 3, 4, 5, 6, 7)),
-        arguments(Arrays.asList(7, 6, 5, 4, 3, 2, 1), Arrays.asList(7, 6, 5, 4, 3, 2, 1)),
-        arguments(Arrays.asList(1, 7, 2, 6, 3, 5, 4), Arrays.asList(1, 7, 2, 6, 3, 5, 4))
+        arguments(INC_NUMS,  Arrays.asList(1, 2, 3, 4, 5, 6, 7)),
+        arguments(DEC_NUMS,  Arrays.asList(7, 6, 5, 4, 3, 2, 1)),
+        arguments(SHUF_NUMS, Arrays.asList(1, 7, 2, 6, 3, 5, 4))
       );
     }
 
     @DisplayName("peek() should get the next value")
-    @ParameterizedTest()
+    @ParameterizedTest(name = "for {0}")
     @MethodSource("peekProvider")
     public void testPeek(Iterable<Integer> toAdd, int expected) {
       Queue<Integer> q = this.createQueue();
@@ -192,9 +204,9 @@ public class QueueTest {
 
     static Stream<Arguments> peekProvider() {
       return Stream.of(
-        arguments(Arrays.asList(1, 2, 3, 4, 5, 6, 7), 1),
-        arguments(Arrays.asList(7, 6, 5, 4, 3, 2, 1), 7),
-        arguments(Arrays.asList(1, 7, 2, 6, 3, 5, 4), 1)
+        arguments(INC_NUMS, 1),
+        arguments(DEC_NUMS, 7),
+        arguments(SHUF_NUMS, 1)
       );
     }
   }
