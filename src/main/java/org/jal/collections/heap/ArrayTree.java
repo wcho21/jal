@@ -25,25 +25,25 @@ class ArrayTree {
     return getLastInternalNode(last-root) + root;
   }
 
-  private static int getParent(int index) { // for root zero
+  private static int getParent(int index) {
     assert index >= 1;
 
     return (index-1)/2;
   }
 
-  private static int getLeftChild(int index) { // for root zero
+  private static int getLeftChild(int index) {
     assert index >= 0;
 
     return 2*index+1;
   }
 
-  private static int getRightChild(int index) { // for root zero
+  private static int getRightChild(int index) {
     assert index >= 0;
 
     return 2*index+2;
   }
 
-  private static int getLastInternalNode(int last) { // for root zero
+  private static int getLastInternalNode(int last) {
     assert last >= 1;
 
     return (last-1)/2;
