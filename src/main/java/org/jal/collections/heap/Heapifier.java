@@ -31,31 +31,25 @@ public class Heapifier<T> {
 
   public void siftUp(int index, int root) {
     while (index > root) {
-      int parentIndex = getParent(index, root);
-
-      if (isHeapOrdered(parentIndex, index)) {
+      int parent = getParent(index, root);
+      if (isHeapOrdered(parent, index)) {
         break;
       }
 
-      this.swap(index, parentIndex);
-      index = parentIndex;
+      this.swap(index, parent);
+      index = parent;
     }
   }
 
   public void siftDown(int index, int root, int last) {
-    while (true) {
-      int leftIndex = getLeftChild(index, root);
-      if (leftIndex > last) {
+    while (getLeftChild(index, root) <= last) {
+      int largerChild = this.getLargerChildIndex(index, root, last);
+      if (isHeapOrdered(index, largerChild)) {
         break;
       }
 
-      int largerChildIndex = this.getLargerChildIndex(index, root, last);
-      if (isHeapOrdered(index, largerChildIndex)) {
-        break;
-      }
-
-      this.swap(index, largerChildIndex);
-      index = largerChildIndex;
+      this.swap(index, largerChild);
+      index = largerChild;
     }
   }
 
