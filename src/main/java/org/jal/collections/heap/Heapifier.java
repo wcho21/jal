@@ -72,15 +72,15 @@ public class Heapifier<T> {
     }
   }
 
-  private void swap(int i, int j) {
-    T temp = this.get.apply(i);
-    this.set.accept(i, this.get.apply(j));
-    this.set.accept(j, temp);
-  }
-
   private boolean isHeapOrdered(int parentIndex, int childIndex) {
     T parent = this.get.apply(parentIndex);
     T child = this.get.apply(childIndex);
     return isGreaterThanOrEqualTo(parent, child, this.comp);
+  }
+
+  private void swap(int i, int j) {
+    T temp = this.get.apply(i);
+    this.set.accept(i, this.get.apply(j));
+    this.set.accept(j, temp);
   }
 }
