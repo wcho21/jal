@@ -15,10 +15,7 @@ public class HeapStrategy<T> implements ArraySortStrategy<T> {
     heapifier.heapify(root, last);
 
     for (int i = last; i > begin; --i) {
-      // move the greatest value to the last in the interval [begin, i+1)
       swap(arr, begin, i);
-
-      // heapify for the reduced interval [begin, i)
       heapifier.siftDown(begin, begin, i-1);
     }
 
