@@ -31,41 +31,33 @@ public class Heapifier<T> {
 
   public void siftUp(int index, int root) {
     while (index > root) {
-      int parentIndex = getParent(index, root);
-
-      if (isHeapOrdered(parentIndex, index)) {
+      int parent = getParent(index, root);
+      if (isHeapOrdered(parent, index)) {
         break;
       }
 
-      this.swap(index, parentIndex);
-      index = parentIndex;
+      this.swap(index, parent);
+      index = parent;
     }
   }
 
   public void siftDown(int index, int root, int last) {
-    while (true) {
-      int leftIndex = getLeftChild(index, root);
-      if (leftIndex > last) {
+    while (getLeftChild(index, root) <= last) {
+      int largerChild = this.getLargerChildIndex(index, root, last);
+      if (isHeapOrdered(index, largerChild)) {
         break;
       }
 
-      int largerChildIndex = this.getLargerChildIndex(index, root, last);
-      if (isHeapOrdered(index, largerChildIndex)) {
-        break;
-      }
-
-      this.swap(index, largerChildIndex);
-      index = largerChildIndex;
+      this.swap(index, largerChild);
+      index = largerChild;
     }
   }
 
   private int getLargerChildIndex(int index, int root, int last) {
     int left = getLeftChild(index, root);
-    if (left > last) {
-      return -1;
-    }
+    assert left <= last;
 
-    // return left child if a sole one
+    // return left child if no right one
     int right = getRightChild(index, root);
     if (right > last) {
       return left;
@@ -80,15 +72,15 @@ public class Heapifier<T> {
     }
   }
 
-  private void swap(int i, int j) {
-    T temp = this.get.apply(i);
-    this.set.accept(i, this.get.apply(j));
-    this.set.accept(j, temp);
-  }
-
   private boolean isHeapOrdered(int parentIndex, int childIndex) {
     T parent = this.get.apply(parentIndex);
     T child = this.get.apply(childIndex);
     return isGreaterThanOrEqualTo(parent, child, this.comp);
+  }
+
+  private void swap(int i, int j) {
+    T temp = this.get.apply(i);
+    this.set.accept(i, this.get.apply(j));
+    this.set.accept(j, temp);
   }
 }
