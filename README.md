@@ -85,3 +85,17 @@
   - 더블 해싱 셋: [DoubleHashingSet.java](./src/main/java/org/jal/collections/set/DoubleHashingSet.java)
 
   - 더블 해싱 맵: [DoubleHashingMap.java](./src/main/java/org/jal/collections/map/DoubleHashingMap.java)
+
+- [우선순위를 기억하는 방법](https://drop.rooi.dev/posts/2024/07/15/01/)
+
+  - 배열 트리: [ArrayTree.java](./src/main/java/org/jal/collections/heap/ArrayTree.java)
+
+  - 힙 프로퍼티 유틸: [Heapifier.java](./src/main/java/org/jal/collections/heap/Heapifier.java)
+
+  - 힙 우선순위 큐: [HeapPriorityQueue.java](./src/main/java/org/jal/collections/queue/HeapPriorityQueue.java)
+
+  - LIFO 큐: [LifoQueue.java](./src/main/java/org/jal/collections/queue/LifoQueue.java)
+
+  - FIFO 큐: [FifoQueue.java](./src/main/java/org/jal/collections/queue/FifoQueue.java)
+
+  - 힙 소트: [HeapStrategy.java](./src/main/java/org/jal/sorting/strategy/arrays/HeapStrategy.java)
