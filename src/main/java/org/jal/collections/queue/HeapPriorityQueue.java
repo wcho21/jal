@@ -23,8 +23,8 @@ public class HeapPriorityQueue<T> implements Queue<T> {
 
   public T poll() {
     T polled = this.arr.get(0);
-    this.swap(0, this.arr.getSize()-1);
 
+    this.swap(0, this.arr.getSize()-1);
     this.arr.remove();
     this.heapifier.siftDown(0, 0, this.arr.getSize()-1);
 
