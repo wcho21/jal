@@ -1,8 +1,12 @@
 # JAL
 
-자바 알고리즘 라이브러리.
+자바 알고리즘 라이브러리
 
-## Catalog
+## Usage
+
+Open dev container or locally install OpenJDK 21 and Maven.
+
+## Related Articles
 
 - [알고리즘은 무엇을 얼마나 빨리 풀 수 있을까](https://drop.rooi.dev/posts/2024/05/07/01)
 
