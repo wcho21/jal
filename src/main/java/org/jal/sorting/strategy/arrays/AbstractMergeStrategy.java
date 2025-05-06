@@ -28,7 +28,8 @@ public abstract class AbstractMergeStrategy<T> implements ArraySortStrategy<T> {
     int upperEnd = end;
 
     for (int i = begin; i < end; ++i) {
-      if (isLessOrEqualLowerBegin(arr, lowerBegin, lowerEnd, upperBegin, upperEnd, comp)) {
+      boolean lessOrEqual = isLessOrEqualLowerBegin(arr, lowerBegin, lowerEnd, upperBegin, upperEnd, comp);
+      if (lessOrEqual) {
         this.aux[i] = arr[lowerBegin++];
       } else {
         this.aux[i] = arr[upperBegin++];

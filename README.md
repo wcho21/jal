@@ -14,7 +14,7 @@ Open dev container or locally install OpenJDK 21 and Maven.
 
 - [두 가지 방법으로 만드는 스택](https://drop.rooi.dev/posts/2024/05/09/01)
 
-  - 링크드 리스트: [LinkedList.java](./src/main/java/org/jal/collections/list/LinkedList.java)
+  - 링크드 리스트: [LifoLinkedList.java](./src/main/java/org/jal/collections/list/LifoLinkedList.java)
 
   - 링크드 리스트 스택: [ListStack.java](./src/main/java/org/jal/collections/stack/ListStack.java)
 
@@ -30,11 +30,7 @@ Open dev container or locally install OpenJDK 21 and Maven.
 
   - 바이너리 서치 (제네릭): [BinarySearchArray.java](./src/main/java/org/jal/search/BinarySearchArray.java)
 
-  - 컴패러터 유틸: [Comparators.java](./src/main/java/org/jal/util/Comparators.java)
-
   - 인서션 소트: [InsertionStrategy.java](./src/main/java/org/jal/sorting/strategy/arrays/InsertionStrategy.java)
-
-  - 스왑 유틸: [Comparators.java](./src/main/java/org/jal/util/Comparators.java)
 
   - 셸 소트: [ShellStrategy.java](./src/main/java/org/jal/sorting/strategy/arrays/ShellStrategy.java)
 
