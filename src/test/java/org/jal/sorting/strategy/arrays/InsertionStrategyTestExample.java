@@ -36,8 +36,7 @@ public class InsertionStrategyTestExample {
     Integer[] expected = { 0, 8, 1, 9, 2, 10, 3, 4, 5, 6, 7 };
     ArraySortStrategy<Integer> strat = new InsertionStrategy<>();
 
-    ArraySorter.sortArray(toSort, strat,
-      Comparator.comparing(v -> v % 8));
+    ArraySorter.sortArray(toSort, strat, Comparator.comparing(v -> v % 8));
 
     assertArrayEquals(expected, toSort);
   }
